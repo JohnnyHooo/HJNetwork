@@ -4,9 +4,6 @@
 [![Version](https://img.shields.io/cocoapods/v/HJNetwork.svg?style=flat)](http://cocoapods.org/pods/HJNetwork)
 [![License](https://img.shields.io/cocoapods/l/HJNetwork.svg?style=flat)](http://cocoapods.org/pods/HJNetwork)
 [![Platform](https://img.shields.io/cocoapods/p/HJNetwork.svg?style=flat)](http://cocoapods.org/pods/HJNetwork)
-
-<br /> 
-
 ## 前言
 
 	本来是想在GitHub找一个符合自己App的网络请求库，结果就是要么不支持缓存或者不支持RESTful API 请求，
