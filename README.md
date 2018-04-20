@@ -10,7 +10,7 @@
 	又或者带缓存的又不支持过滤某一些字段，带着这样的需求之下就有了 “HJNetwork” 这个库。
 	初衷就是在最大程度下满足所有App的日常需求。
 <br /> 
-<img src="https://raw.githubusercontent.com/JohnnyHooo/HJNetwork/master/HJNetwork.png" alt="Demo效果" align=left />
+<img src="https://raw.githubusercontent.com/JohnnyHooo/HJNetwork/master/HJNetwork.png"  width="313" height="616"  alt="Demo效果" align=left />
 
 ## 特点
 - HJNetwork 对 AFHTTPSessionManager 进行二次封装。包括网络请求、文件上传、文件下载这三个方法。并且支持RESTful API GET、POST、PUT、DELETE、PATCH的请求。同时使用YYCache做了强大的缓存策略。
