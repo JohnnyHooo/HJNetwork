@@ -33,7 +33,12 @@ pod 'HJNetwork'
 ```objc
 [HJNetwork setBaseURL:@"https://atime.com/app/v1/"];
 ```
-baseURL 的路径一定要有“/”结尾，设置后所有的网络访问都使用相对路径。
+#### 设置缓存过滤参数key(如时间戳，随机数)否则会导致无法得到缓存数据
+
+```objc
+[HJNetwork setFiltrationCacheKey:@[@"time",@"ts"]];
+```
+
 
 #### 设置日志
 
@@ -42,12 +47,52 @@ baseURL 的路径一定要有“/”结尾，设置后所有的网络访问都�
 ```objc
 [HJNetwork setLogEnabled:YES];
 ```
+### 网络状态
+
+#### 网络状态监听
+
+```objc
+[HJNetwork getNetworkStatusWithBlock:^(HJNetworkStatusType status) {
+        switch (status) {
+            case HJNetworkStatusUnknown:
+                //未知网络
+                break;
+            case HJNetworkStatusNotReachable:
+                //无网路
+                break;
+            case HJNetworkStatusReachableWWAN:
+                //手机网络
+                break;
+            case HJNetworkStatusReachableWiFi:
+                //WiFi网络
+                break;
+            default:
+                break;
+        }
+    }];
+```
 ### 网络请求
 
-#### 常规调用
+#### 缓存策略
 
+```objc
+typedef NS_ENUM(NSUInteger, HJCachePolicy){
+    /**只从网络获取数据，且数据不会缓存在本地*/
+    HJCachePolicyIgnoreCache = 0,
+    /**只从缓存读数据，如果缓存没有数据，返回一个空*/
+    HJCachePolicyCacheOnly = 1,
+    /**先从网络获取数据，同时会在本地缓存数据*/
+    HJCachePolicyNetworkOnly = 2,
+    /**先从缓存读取数据，如果没有再从网络获取*/
+    HJCachePolicyCacheElseNetwork = 3,
+    /**先从网络获取数据，如果没有，此处的没有可以理解为访问网络失败，再从缓存读取*/
+    HJCachePolicyNetworkElseCache = 4,
+    /**先从缓存读取数据，然后在本地缓存数据，无论结果如何都会再次从网络获取数据，在这种情况下，Block将产生两次调用*/
+    HJCachePolicyCacheThenNetwork = 5
+};
+```
+#### 请求方式
 **以 POST 方法为例，方法定义：**
-
 ```objc
 /**
  POST请求
@@ -55,10 +100,109 @@ baseURL 的路径一定要有“/”结尾，设置后所有的网络访问都�
  @param url 请求地址
  @param parameters 请求参数
  @param cachePolicy 缓存策略
- @param success 请求回调
+ @param callback 请求回调
  */
 + (void)POSTWithURL:(NSString *)url
          parameters:(NSDictionary *)parameters
         cachePolicy:(HJCachePolicy)cachePolicy
-            success:(HJHttpRequest)success;
+            callback:(HJHttpRequest)callback;
 ```
+**自定义请求方式：**
+```objc
+/**
+ 自定义请求方式
+ 
+ @param method 请求方式(GET, POST, HEAD, PUT, PATCH, DELETE)
+ @param url 请求地址
+ @param parameters 请求参数
+ @param cachePolicy 缓存策略
+ @param callback 请求回调
+ */
++ (void)HTTPWithMethod:(HJRequestMethod)method
+                    url:(NSString *)url
+             parameters:(NSDictionary *)parameters
+            cachePolicy:(HJCachePolicy)cachePolicy
+                callback:(HJHttpRequest)callback;
+```
+#### 取消请求
+
+```objc
+/**
+ 取消所有HTTP请求
+ */
++ (void)cancelAllRequest;
+
+/**
+ 取消指定URL的HTTP请求
+ */
++ (void)cancelRequestWithURL:(NSString *)url;
+```
+#### 上传
+
+```objc
+/**
+ 上传文件
+ 
+ @param url 请求地址
+ @param parameters 请求参数
+ @param name 文件对应服务器上的字段
+ @param filePath 文件路径
+ @param progress 上传进度
+ @param callback 请求回调
+ */
++ (void)uploadFileWithURL:(NSString *)url
+               parameters:(NSDictionary *)parameters
+                     name:(NSString *)name
+                 filePath:(NSString *)filePath
+                 progress:(HJHttpProgress)progress
+                  callback:(HJHttpRequest)callback;
+```
+
+
+#### 下载
+
+```objc
+/**
+ 下载文件
+
+ @param url 请求地址
+ @param fileDir 文件存储的目录(默认存储目录为Download)
+ @param progress 文件下载的进度信息
+ @param callback 请求回调
+ */
++ (void)downloadWithURL:(NSString *)url
+                fileDir:(NSString *)fileDir
+               progress:(HJHttpProgress)progress
+                callback:(HJHttpDownload)callback;
+```
+
+### 缓存处理
+#### 设置最大缓存内存
+
+```objc
+/**
+ *  磁盘最大缓存开销大小 bytes(字节)
+ */
++ (void)setCostLimit:(NSInteger)costLimit;
+
+```
+#### 获取网络缓存的总大小
+```objc
+/**
+ *  获取网络缓存的总大小 bytes(字节)
+ *  推荐使用该方法 不会阻塞主线程，通过block返回
+ */
++ (void)getAllHttpCacheSizeBlock:(void(^)(NSInteger totalCount))block;
+
+```
+#### 获取网络缓存的总大小
+```objc
+/**
+ *  删除所有网络缓存
+ *  推荐使用该方法 不会阻塞主线程，同时返回Progress
+ */
++ (void)removeAllHttpCacheBlock:(void(^)(int removedCount, int totalCount))progress
+                       endBlock:(void(^)(BOOL error))end;
+
+```
+
