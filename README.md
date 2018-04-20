@@ -5,13 +5,19 @@
 [![License](https://img.shields.io/cocoapods/l/HJNetwork.svg?style=flat)](http://cocoapods.org/pods/HJNetwork)
 [![Platform](https://img.shields.io/cocoapods/p/HJNetwork.svg?style=flat)](http://cocoapods.org/pods/HJNetwork)
 
-## Example
+- HJNetwork 对 AFHTTPSessionManager 进行二次封装。包括网络请求、文件上传、文件下载这三个方法。并且支持RESTful API GET、POST、PUT、DELETE、PATCH的请求。同时使用YYCache做了强大的缓存策略。
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+- 拥有 AFNetwork 大部分常用功能，包括网络状态监听等，提供类方法和实例方法调用。
 
-## Requirements
+- 非常好的扩展性，开放出了YYCache和AFNetwork的实例对象，更便于满足各种不同需求。
 
-## Installation
+- 支持多种缓存策略。
+
+
+
+## 安装
+
+### 支持 Cocoapods 安装
 
 HJNetwork is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
