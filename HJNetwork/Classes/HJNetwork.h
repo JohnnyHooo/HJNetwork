@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-
 @class YYCache, AFHTTPSessionManager;
 
 typedef NS_ENUM(NSUInteger, HJCachePolicy){
