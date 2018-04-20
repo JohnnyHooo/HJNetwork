@@ -42,6 +42,7 @@
         weakSelf.stateLabel.text = [NSString stringWithFormat:@"当前网络:%@",[weakSelf getStateStr:status]];
     }];
     
+    //演示请求
     [self request:_requestBtn];
 }
 
