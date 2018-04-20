@@ -37,7 +37,8 @@
 //    [HJNetwork setFiltrationCacheKey:@[@"time",@"ts"]];
     [HJNetwork setRequestTimeoutInterval:60.0f];
     
-    [HJNetwork setCacheVersionEnabled:YES];
+    //按App版本号缓存网络请求内容 可修改版本号查看效果 或 使用自定义版本号方法
+    [HJNetwork setCacheVersionEnabled:NO];
     
     //网络状态
     __weak __typeof(&*self)weakSelf = self;
@@ -46,7 +47,7 @@
     }];
     
     //演示请求
-//    [self request:_requestBtn];
+    [self request:_requestBtn];
 }
 
 /**修改缓存策略*/
