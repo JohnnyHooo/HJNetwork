@@ -7,9 +7,10 @@
 ## 前言
 
 	本来是想在GitHub找一个符合自己App的网络请求库，结果就是要么不支持缓存或者不支持RESTful API 请求，
-	又或者带缓存的又不支持过滤某一些字段，带着这样的需求之下就有了 “HJNetwork” 这个库。
+	又或者带缓存的又不支持过滤某一些参数字段(否则无法得到缓存)，带着这样的需求之下就有了 “HJNetwork” 这个库。
 	初衷就是在最大程度下满足所有App的日常需求。
 <br /> 
+<img src="https://raw.githubusercontent.com/JohnnyHooo/HJNetwork/master/HJNetwork.png"  width="313" height="616"  alt="Demo效果" align=right />
 
 ## 特点
 - HJNetwork 对 AFHTTPSessionManager 进行二次封装。包括网络请求、文件上传、文件下载这三个方法。并且支持RESTful API GET、POST、PUT、DELETE、PATCH的请求。同时使用YYCache做了强大的缓存策略。
@@ -19,9 +20,6 @@
 - 非常好的扩展性，开放出了YYCache和AFNetwork的实例对象，更便于满足各种不同需求。
 
 - 支持多种缓存策略。
-
-<br /> 
-
 
 ## 安装
 
