@@ -1,0 +1,6 @@
+framework module HJNetwork {
+  umbrella header "HJNetwork-umbrella.h"
+
+  export *
+  module * { export * }
+}

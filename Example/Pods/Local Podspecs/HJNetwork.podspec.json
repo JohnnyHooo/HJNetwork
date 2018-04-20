@@ -1,0 +1,30 @@
+{
+  "name": "HJNetwork",
+  "version": "0.1.0",
+  "summary": "A short description of HJNetwork.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Johnny/HJNetwork",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Johnny": "hujin123@vip.qq.com"
+  },
+  "source": {
+    "git": "https://github.com/Johnny/HJNetwork.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "HJNetwork/Classes/**/*",
+  "dependencies": {
+    "AFNetworking": [
+
+    ],
+    "YYCache": [
+
+    ]
+  }
+}

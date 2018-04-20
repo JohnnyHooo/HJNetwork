@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oWx-Tq-p5W">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--HJNetwork-->
+        <scene sceneID="wQg-tq-qST">
+            <objects>
+                <viewController id="whP-gf-Uak" customClass="HJViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uEw-UM-LJ8"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mvr-aV-6Um"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="网络获取中..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVJ-yP-bwU">
+                                <rect key="frame" x="141.5" y="74" width="91" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6EQ-xR-7Pi">
+                                <rect key="frame" x="10" y="484" width="355" height="173"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="https://www.ipip5.com/today/api.php?type=json" borderStyle="roundedRect" placeholder="请输入URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iZB-Qq-eWm">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6jE-nA-WkI">
+                                        <rect key="frame" x="0.0" y="40" width="355" height="29"/>
+                                        <segments>
+                                            <segment title="GET"/>
+                                            <segment title="POST"/>
+                                            <segment title="HEAD"/>
+                                            <segment title="PUT"/>
+                                            <segment title="PATCH"/>
+                                            <segment title="DELETE"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="changeMethod:" destination="whP-gf-Uak" eventType="valueChanged" id="D6x-Ss-4No"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xDa-JG-vug">
+                                        <rect key="frame" x="0.0" y="78" width="355" height="29"/>
+                                        <segments>
+                                            <segment title="缓存0"/>
+                                            <segment title="缓存1"/>
+                                            <segment title="缓存2"/>
+                                            <segment title="缓存3"/>
+                                            <segment title="缓存4"/>
+                                            <segment title="缓存5"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="changeCachePolicy:" destination="whP-gf-Uak" eventType="valueChanged" id="X9a-bz-jvO"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="只从网络获取数据，且数据不会缓存在本地" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SJK-Hx-qgV">
+                                        <rect key="frame" x="0.0" y="116" width="355" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jsT-f8-vfz">
+                                        <rect key="frame" x="0.0" y="143" width="355" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egZ-RA-Agw">
+                                                <rect key="frame" x="0.0" y="0.0" width="81.5" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.59215686274509804" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <state key="normal" title="请求">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <state key="disabled" title="请求中..."/>
+                                                <connections>
+                                                    <action selector="request:" destination="whP-gf-Uak" eventType="touchUpInside" id="3uU-IH-GA1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dH-8P-qPj">
+                                                <rect key="frame" x="91.5" y="0.0" width="81" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.59215686274509804" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <state key="normal" title="取消">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="cancelRequest:" destination="whP-gf-Uak" eventType="touchUpInside" id="E8Y-mP-Xwc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cft-8e-tAi">
+                                                <rect key="frame" x="182.5" y="0.0" width="81.5" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.59215686270000001" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <state key="normal" title="清空">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clearRequest:" destination="whP-gf-Uak" eventType="touchUpInside" id="Gpd-PB-cL8"/>
+                                                    <action selector="empty:" destination="whP-gf-Uak" eventType="touchUpInside" id="9rX-17-W9t"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1C-SI-p29">
+                                                <rect key="frame" x="274" y="0.0" width="81" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.59215686274509804" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <state key="normal" title="清除缓存">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <state key="disabled" title="清除缓存中..."/>
+                                                <connections>
+                                                    <action selector="clearRequest:" destination="whP-gf-Uak" eventType="touchUpInside" id="yP1-KI-OXA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AFV-4s-90s">
+                                <rect key="frame" x="10" y="102" width="355" height="372"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="6EQ-xR-7Pi" secondAttribute="bottom" constant="10" id="3hN-nK-hv9"/>
+                            <constraint firstItem="mVJ-yP-bwU" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" constant="10" id="3uG-qe-8lj"/>
+                            <constraint firstItem="mVJ-yP-bwU" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="Cmh-SP-YT5"/>
+                            <constraint firstAttribute="trailing" secondItem="6EQ-xR-7Pi" secondAttribute="trailing" constant="10" id="LY8-Qb-EDM"/>
+                            <constraint firstItem="6EQ-xR-7Pi" firstAttribute="top" secondItem="AFV-4s-90s" secondAttribute="bottom" constant="10" id="XKW-ST-YYb"/>
+                            <constraint firstAttribute="trailing" secondItem="AFV-4s-90s" secondAttribute="trailing" constant="10" id="Xye-h1-f3V"/>
+                            <constraint firstItem="AFV-4s-90s" firstAttribute="top" secondItem="mVJ-yP-bwU" secondAttribute="bottom" constant="10" id="Y6p-RH-TFi"/>
+                            <constraint firstItem="AFV-4s-90s" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" constant="10" id="Yv8-L3-yMI"/>
+                            <constraint firstItem="6EQ-xR-7Pi" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" constant="10" id="pF6-ac-zXv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="HJNetwork" id="taW-qy-edU"/>
+                    <connections>
+                        <outlet property="cacheLabel" destination="SJK-Hx-qgV" id="2XG-3J-2gC"/>
+                        <outlet property="requestBtn" destination="egZ-RA-Agw" id="BrG-cV-ZuJ"/>
+                        <outlet property="responseTextView" destination="AFV-4s-90s" id="hwK-CT-Ipo"/>
+                        <outlet property="stateLabel" destination="mVJ-yP-bwU" id="Kfy-L8-ZLE"/>
+                        <outlet property="urlTextField" destination="iZB-Qq-eWm" id="eov-Lj-UYm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1244" y="432.23388305847078"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Hlr-Qo-Xjt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oWx-Tq-p5W" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zR5-hU-H01">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="whP-gf-Uak" kind="relationship" relationship="rootViewController" id="6I0-Vl-3t5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u34-G0-TIV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="304.80000000000001" y="432.23388305847078"/>
+        </scene>
+    </scenes>
+</document>

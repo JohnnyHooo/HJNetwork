@@ -1,0 +1,157 @@
+//
+//  HJViewController.m
+//  HJNetwork
+//
+//  Created by Johnny on 04/19/2018.
+//  Copyright (c) 2018 Johnny. All rights reserved.
+//
+
+#import "HJViewController.h"
+#import "HJNetwork.h"
+
+@interface HJViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *urlTextField;
+@property (weak, nonatomic) IBOutlet UITextView *responseTextView;
+@property (weak, nonatomic) IBOutlet UILabel *stateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *cacheLabel;
+@property (weak, nonatomic) IBOutlet UIButton *requestBtn;
+
+@end
+
+@implementation HJViewController
+{
+    HJCachePolicy cachePolicy;
+    HJRequestMethod method;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    //DEMO 默认GET请求
+    method = HJRequestMethodGET;
+
+    //开启控制台log
+    [HJNetwork setLogEnabled:NO];
+    
+    [HJNetwork setRequestTimeoutInterval:60.0f];
+    //网络状态
+    __weak __typeof(&*self)weakSelf = self;
+    [HJNetwork getNetworkStatusWithBlock:^(HJNetworkStatusType status) {
+        weakSelf.stateLabel.text = [NSString stringWithFormat:@"当前网络:%@",[weakSelf getStateStr:status]];
+    }];
+    
+    
+}
+
+/**修改缓存策略*/
+- (IBAction)changeCachePolicy:(UISegmentedControl *)sender {
+    cachePolicy = sender.selectedSegmentIndex;
+    _cacheLabel.text = [self getCacheStr:cachePolicy];
+}
+
+/**修改请求方法*/
+- (IBAction)changeMethod:(UISegmentedControl *)sender {
+    method = sender.selectedSegmentIndex;
+}
+
+/**请求*/
+- (IBAction)request:(UIButton *)sender {
+    sender.enabled = NO;
+    __weak __typeof(&*self)weakSelf = self;
+    [HJNetwork HTTPWithMethod:method url:_urlTextField.text parameters:nil cachePolicy:cachePolicy success:^(id responseObject, NSError *error) {
+        sender.enabled = YES;
+        if (!error) {
+            weakSelf.responseTextView.text = [NSString stringWithFormat:@"%@",responseObject];
+        }else{
+            weakSelf.responseTextView.text = [error localizedDescription];
+            NSLog(@"---->%@",@"错误");
+        }
+    }];
+}
+
+/**取消请求*/
+- (IBAction)cancelRequest:(UIButton *)sender {
+    [HJNetwork cancelRequestWithURLStr:_urlTextField.text];
+    _requestBtn.enabled = YES;
+}
+
+/**清空*/
+- (IBAction)empty:(UIButton *)sender {
+    _responseTextView.text = @"";
+}
+
+/**清除缓存*/
+- (IBAction)clearRequest:(UIButton *)sender {
+    sender.enabled = NO;
+    [HJNetwork removeAllHttpCacheBlock:nil endBlock:^(BOOL error) {
+        //通知主线程刷新
+        dispatch_async(dispatch_get_main_queue(), ^{
+            sender.enabled = YES;
+        });
+    }];
+}
+
+
+/**获取网络状态*/
+- (NSString *)getStateStr:(HJNetworkStatusType)status
+{
+    switch (status) {
+        case HJNetworkStatusUnknown:
+            return @"未知网络";
+            break;
+        case HJNetworkStatusNotReachable:
+            return @"无网路";
+            break;
+        case HJNetworkStatusReachableWWAN:
+            return @"手机网络";
+            break;
+        case HJNetworkStatusReachableWiFi:
+            return @"WiFi网络";
+            break;
+        default:
+            break;
+    }
+}
+
+/**获取网络状态*/
+- (NSString *)getCacheStr:(HJCachePolicy)cache
+{
+    switch (cache) {
+        case HJCachePolicyIgnoreCache:
+            return @"只从网络获取数据，且数据不会缓存在本地";
+            break;
+        case HJCachePolicyCacheOnly:
+            return @"只从缓存读数据，如果缓存没有数据，返回一个空";
+            break;
+        case HJCachePolicyNetworkOnly:
+            return @"先从网络获取数据，同时会在本地缓存数据";
+            break;
+        case HJCachePolicyCacheElseNetwork:
+            return @"先从缓存读取数据，如果没有再从网络获取";
+            break;
+        case HJCachePolicyNetworkElseCache:
+            return @"先从网络获取数据，如果没有，此处的没有可以理解为访问网络失败，再从缓存读取";
+            break;
+        case HJCachePolicyCacheThenNetwork:
+            return @"先从缓存读取数据，然后在本地缓存数据，无论结果如何都会再次从网络获取数据，在这种情况下，Block将产生两次调用";
+            break;
+        default:
+            break;
+    }
+}
+
+
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+@end
