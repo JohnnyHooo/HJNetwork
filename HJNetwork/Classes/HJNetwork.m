@@ -8,6 +8,7 @@
 
 #import "HJNetwork.h"
 #import "YYCache.h"
+#import "AFNetworkActivityIndicatorManager.h"
 
 #ifdef DEBUG
 #define ATLog(FORMAT, ...) fprintf(stderr,"[%s:%d行] %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
