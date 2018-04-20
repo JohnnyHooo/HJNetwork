@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HJNetwork'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'A short description of HJNetwork.'
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  基于 AFNetworking + YYCache 的二次封装，支持RESTful API，缓存策略的网络请求框架。
                        DESC
 
   s.homepage         = 'https://github.com/JohnnyHooo/HJNetwork'

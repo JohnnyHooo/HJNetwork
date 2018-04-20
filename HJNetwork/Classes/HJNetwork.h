@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "AFNetworking.h"
 
-@class YYCache, AFNetworkActivityIndicatorManager;
+
+@class YYCache, AFHTTPSessionManager;
 
 typedef NS_ENUM(NSUInteger, HJCachePolicy){
     /**只从网络获取数据，且数据不会缓存在本地*/
