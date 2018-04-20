@@ -27,7 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    NSLog(@"---->%@",NSHomeDirectory());
     //DEMO 默认GET请求
     method = HJRequestMethodGET;
     
@@ -36,6 +36,9 @@
 //    [HJNetwork setBaseURL:@"https://atime.com/app/v1/"];
 //    [HJNetwork setFiltrationCacheKey:@[@"time",@"ts"]];
     [HJNetwork setRequestTimeoutInterval:60.0f];
+    
+    [HJNetwork setCacheVersionEnabled:YES];
+    
     //网络状态
     __weak __typeof(&*self)weakSelf = self;
     [HJNetwork getNetworkStatusWithBlock:^(HJNetworkStatusType status) {
@@ -43,7 +46,7 @@
     }];
     
     //演示请求
-    [self request:_requestBtn];
+//    [self request:_requestBtn];
 }
 
 /**修改缓存策略*/
@@ -136,7 +139,7 @@
             return @"先从网络获取数据，如果没有再从缓存读取数据，此处的没有可以理解为访问网络失败，再从缓存读取数据";
             break;
         case HJCachePolicyCacheThenNetwork:
-            return @"先从缓存读取数据，然后再从网络获取数据，Block将产生两次调用";
+            return @"先从缓存读取数据，然后在从网络获取并且缓存，Block将产生两次调用";
             break;
         default:
             break;

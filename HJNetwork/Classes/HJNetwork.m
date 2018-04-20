@@ -10,6 +10,8 @@
 #import "YYCache.h"
 #import "AFNetworkActivityIndicatorManager.h"
 #import "AFNetworking.h"
+#import <SystemConfiguration/CaptiveNetwork.h>
+#import <CommonCrypto/CommonDigest.h>
 
 #ifdef DEBUG
 #define ATLog(FORMAT, ...) fprintf(stderr,"[%s:%d行] %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
@@ -21,12 +23,14 @@
 @implementation HJNetwork
 
 static BOOL _logEnabled;
+static BOOL _cacheVersionEnabled;
 static NSMutableArray *_allSessionTask;
 static NSDictionary *_baseParameters;
 static NSArray *_filtrationCacheKey;
 static AFHTTPSessionManager *_sessionManager;
-static NSString *const NetworkResponseCache = @"ATNetworkResponseCache";
+static NSString *const NetworkResponseCache = @"HJNetworkResponseCache";
 static NSString * _baseURL;
+static NSString * _cacheVersion;
 static YYCache *_dataCache;
 
 /*所有的请求task数组*/
@@ -52,7 +56,30 @@ static YYCache *_dataCache;
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     _dataCache = [YYCache cacheWithName:NetworkResponseCache];
     _logEnabled = YES;
+    _cacheVersionEnabled = NO;
 }
+
+/**是否按App版本号缓存网络请求内容(默认关闭)*/
++ (void)setCacheVersionEnabled:(BOOL)bFlag
+{
+    _cacheVersionEnabled = bFlag;
+    if (bFlag) {
+        if (!_cacheVersion.length) {
+            _cacheVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+        }
+        _dataCache = [YYCache cacheWithName:[NSString stringWithFormat:@"%@(%@)",NetworkResponseCache,_cacheVersion]];
+    }else{
+        _dataCache = [YYCache cacheWithName:NetworkResponseCache];
+    }
+}
+
+/**使用自定义缓存版本号*/
++ (void)setCacheVersion:(NSString*)version
+{
+    _cacheVersion = version;
+    [self setCacheVersionEnabled:YES];
+}
+
 
 /** 输出Log信息开关*/
 + (void)setLogEnabled:(BOOL)bFlag
@@ -268,7 +295,7 @@ static YYCache *_dataCache;
     }
     
     if (_logEnabled) {
-        ATLog(@"\n请求参数 = %@\n请求URL = %@\n请求方式 = %@\n缓存策略 = %@\n",parameters ? [self jsonToString:parameters]:@"空", url, [self getMethodStr:method], [self cachePolicyStr:cachePolicy]);
+        ATLog(@"\n请求参数 = %@\n请求URL = %@\n请求方式 = %@\n缓存策略 = %@\n版本缓存 = %@",parameters ? [self jsonToString:parameters]:@"空", url, [self getMethodStr:method], [self cachePolicyStr:cachePolicy], _cacheVersionEnabled? @"启用":@"未启用");
     }
     
     if (cachePolicy == HJCachePolicyIgnoreCache) {
@@ -563,7 +590,24 @@ static YYCache *_dataCache;
     // 将URL与转换好的参数字符串拼接在一起,成为最终存储的KEY值
     NSString *cacheKey = [NSString stringWithFormat:@"%@%@",url,paraString];
     
-    return cacheKey;
+    return [self md5StringFromString:cacheKey];
+}
+
+/*MD5加密URL*/
++ (NSString *)md5StringFromString:(NSString *)string {
+    NSParameterAssert(string != nil && [string length] > 0);
+    
+    const char *value = [string UTF8String];
+    
+    unsigned char outputBuffer[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(value, (CC_LONG)strlen(value), outputBuffer);
+    
+    NSMutableString *outputString = [[NSMutableString alloc] initWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
+    for(NSInteger count = 0; count < CC_MD5_DIGEST_LENGTH; count++){
+        [outputString appendFormat:@"%02x",outputBuffer[count]];
+    }
+    
+    return outputString;
 }
 
 

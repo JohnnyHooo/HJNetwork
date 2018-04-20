@@ -83,6 +83,12 @@ typedef void(^HJNetworkStatus)(HJNetworkStatusType status);
 
 @interface HJNetwork : NSObject
 
+/**是否按App版本号缓存网络请求内容(默认关闭)*/
++ (void)setCacheVersionEnabled:(BOOL)bFlag;
+
+/**使用自定义缓存版本号*/
++ (void)setCacheVersion:(NSString*)version;
+
 /**输出Log信息开关(默认打开)*/
 + (void)setLogEnabled:(BOOL)bFlag;
 
@@ -303,7 +309,6 @@ typedef void(^HJNetworkStatus)(HJNetworkStatusType status);
  *
  */
 + (void)httpCacheForURL:(NSString *)url parameters:(NSDictionary *)parameters withBlock:(void(^)(id responseObject))block;
-
 
 /**
  *  磁盘最大缓存开销大小 bytes(字节)

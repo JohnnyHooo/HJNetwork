@@ -104,7 +104,6 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="clearRequest:" destination="whP-gf-Uak" eventType="touchUpInside" id="Gpd-PB-cL8"/>
                                                     <action selector="empty:" destination="whP-gf-Uak" eventType="touchUpInside" id="9rX-17-W9t"/>
                                                 </connections>
                                             </button>
