@@ -19,17 +19,46 @@
 
 ### 支持 Cocoapods 安装
 
-HJNetwork is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
 ```ruby
 pod 'HJNetwork'
 ```
+## 使用
 
-## Author
+所有方法都可以直接看 HJNetworking.h 中的声明以及注释。
 
-Johnny, hujin123@vip.qq.com
+### HJNetwork 配置
 
-## License
+#### 设置请求根路径
 
-HJNetwork is available under the MIT license. See the LICENSE file for more info.
+```objc
+[HJNetwork setBaseURL:@"https://atime.com/app/v1/"];
+```
+baseURL 的路径一定要有“/”结尾，设置后所有的网络访问都使用相对路径。
+
+#### 设置日志
+
+##### 日志打印的开关
+
+```objc
+[HJNetwork setLogEnabled:YES];
+```
+### 网络请求
+
+#### 常规调用
+
+**以 POST 方法为例，方法定义：**
+
+```objc
+/**
+ POST请求
+ 
+ @param url 请求地址
+ @param parameters 请求参数
+ @param cachePolicy 缓存策略
+ @param success 请求回调
+ */
++ (void)POSTWithURL:(NSString *)url
+         parameters:(NSDictionary *)parameters
+        cachePolicy:(HJCachePolicy)cachePolicy
+            success:(HJHttpRequest)success;
+```
