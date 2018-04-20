@@ -5,10 +5,12 @@
 [![License](https://img.shields.io/cocoapods/l/HJNetwork.svg?style=flat)](http://cocoapods.org/pods/HJNetwork)
 [![Platform](https://img.shields.io/cocoapods/p/HJNetwork.svg?style=flat)](http://cocoapods.org/pods/HJNetwork)
 ## 前言
-
-	本来是想在GitHub找一个符合自己App的网络请求库，结果就是要么不支持缓存或者不支持RESTful API 请求，
-	又或者带缓存的又不支持过滤某一些参数字段(否则无法得到缓存)，带着这样的需求之下就有了 “HJNetwork” 这个库。
-	初衷就是在最大程度下满足所有App的日常需求。
+```ruby
+本来是想在GitHub找一个符合自己App的网络请求库，结果就是要么不支持缓存或者不支持RESTful API 请求，
+又或者带缓存的又不支持过滤某一些参数字段(否则无法得到缓存)，带着这样的需求之下就有了 “HJNetwork” 这个库。
+初衷就是在最大程度下满足所有App的日常需求。
+```
+	
 <br /> 
 <img src="https://raw.githubusercontent.com/JohnnyHooo/HJNetwork/master/HJNetwork.png"  width="313" height="616"  alt="Demo效果" align=right />
 
@@ -205,7 +207,7 @@ typedef NS_ENUM(NSUInteger, HJCachePolicy){
 + (void)getAllHttpCacheSizeBlock:(void(^)(NSInteger totalCount))block;
 
 ```
-#### 获取网络缓存的总大小
+#### 删除所有网络缓存
 ```objc
 /**
  *  删除所有网络缓存
