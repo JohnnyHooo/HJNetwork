@@ -14,7 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.0)
   - AFNetworking/UIKit (3.2.0):
     - AFNetworking/NSURLSession
-  - HJNetwork (0.1.0):
+  - HJNetwork (1.0.2):
     - AFNetworking
     - YYCache
   - YYCache (1.0.4)
@@ -22,20 +22,15 @@ PODS:
 DEPENDENCIES:
   - HJNetwork (from `../`)
 
-SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - AFNetworking
-    - YYCache
-
 EXTERNAL SOURCES:
   HJNetwork:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
   AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
-  HJNetwork: 86d5f2f98f832304eda181aa4f80b36642367b47
+  HJNetwork: c05e41e63605215685f7f11bae8a0097a8942716
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
 PODFILE CHECKSUM: 077849181280a8e39cdda812799de9ab5310555a
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.4.0

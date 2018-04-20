@@ -30,10 +30,11 @@
     
     //DEMO 默认GET请求
     method = HJRequestMethodGET;
-
-    //开启控制台log
-    [HJNetwork setLogEnabled:NO];
     
+    //开启控制台log
+    [HJNetwork setLogEnabled:YES];
+//    [HJNetwork setBaseURL:@"https://atime.com/app/v1/"];
+//    [HJNetwork setFiltrationCacheKey:@[@"time",@"ts"]];
     [HJNetwork setRequestTimeoutInterval:60.0f];
     //网络状态
     __weak __typeof(&*self)weakSelf = self;
@@ -41,7 +42,7 @@
         weakSelf.stateLabel.text = [NSString stringWithFormat:@"当前网络:%@",[weakSelf getStateStr:status]];
     }];
     
-    
+    [self request:_requestBtn];
 }
 
 /**修改缓存策略*/
@@ -59,7 +60,7 @@
 - (IBAction)request:(UIButton *)sender {
     sender.enabled = NO;
     __weak __typeof(&*self)weakSelf = self;
-    [HJNetwork HTTPWithMethod:method url:_urlTextField.text parameters:nil cachePolicy:cachePolicy success:^(id responseObject, NSError *error) {
+    [HJNetwork HTTPWithMethod:method url:_urlTextField.text parameters:nil cachePolicy:cachePolicy callback:^(id responseObject, NSError *error) {
         sender.enabled = YES;
         if (!error) {
             weakSelf.responseTextView.text = [NSString stringWithFormat:@"%@",responseObject];
@@ -72,7 +73,7 @@
 
 /**取消请求*/
 - (IBAction)cancelRequest:(UIButton *)sender {
-    [HJNetwork cancelRequestWithURLStr:_urlTextField.text];
+    [HJNetwork cancelRequestWithURL:_urlTextField.text];
     _requestBtn.enabled = YES;
 }
 
