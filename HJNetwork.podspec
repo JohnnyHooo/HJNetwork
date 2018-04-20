@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HJNetwork'
-  s.version          = '1.0.8'
+  s.version          = '1.1.0'
   s.summary          = 'A short description of HJNetwork.'
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-  基于 AFNetworking + YYCache 的二次封装，支持RESTful API，缓存策略的网络请求框架。
+HJNetwork对AFHTTPSessionManager进行二次封装，包括网络请求，文件上传，文件下载这三个方法。并且支持RESTful API GET，POST，HEAD，PUT，DELETE，PATCH的请求。同时使用YYCache做了强大的缓存策略。
                        DESC
 
   s.homepage         = 'https://github.com/JohnnyHooo/HJNetwork'

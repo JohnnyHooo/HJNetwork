@@ -273,7 +273,7 @@ static YYCache *_dataCache;
     
     if (cachePolicy == HJCachePolicyIgnoreCache) {
         //只从网络获取数据，且数据不会缓存在本地
-        [self httpWithMethod:[self getMethodStr:method] url:url parameters:parameters callback:callback];
+        [self httpWithMethod:method url:url parameters:parameters callback:callback];
     }else if (cachePolicy == HJCachePolicyCacheOnly){
         //只从缓存读数据，如果缓存没有数据，返回一个空。
         [self httpCacheForURL:url parameters:parameters withBlock:^(id<NSCoding> object) {
@@ -281,7 +281,7 @@ static YYCache *_dataCache;
         }];
     }else if (cachePolicy == HJCachePolicyNetworkOnly){
         //先从网络获取数据，同时会在本地缓存数据
-        [self httpWithMethod:[self getMethodStr:method] url:url parameters:parameters callback:^(id responseObject, NSError *error) {
+        [self httpWithMethod:method url:url parameters:parameters callback:^(id responseObject, NSError *error) {
             [self setHttpCache:responseObject url:url parameters:parameters];
             callback ? callback(responseObject, error) : nil;
         }];
@@ -292,14 +292,14 @@ static YYCache *_dataCache;
             if (object) {
                 callback ? callback(object, nil) : nil;
             }else{
-                [self httpWithMethod:[self getMethodStr:method] url:url parameters:parameters callback:^(id responseObject, NSError *error) {
+                [self httpWithMethod:method url:url parameters:parameters callback:^(id responseObject, NSError *error) {
                     callback ? callback(responseObject, error) : nil;
                 }];
             }
         }];
     }else if (cachePolicy == HJCachePolicyNetworkElseCache){
         //先从网络获取数据，如果没有，此处的没有可以理解为访问网络失败，再从缓存读取
-        [self httpWithMethod:[self getMethodStr:method] url:url parameters:parameters callback:^(id responseObject, NSError *error) {
+        [self httpWithMethod:method url:url parameters:parameters callback:^(id responseObject, NSError *error) {
             if (responseObject && !error) {
                 callback ? callback(responseObject, error) : nil;
             }else{
@@ -312,7 +312,7 @@ static YYCache *_dataCache;
         //先从缓存读取数据，然后在本地缓存数据，无论结果如何都会再次从网络获取数据，在这种情况下，Block将产生两次调用
         [self httpCacheForURL:url parameters:parameters withBlock:^(id<NSCoding> object) {
             callback ? callback(object, nil) : nil;
-            [self httpWithMethod:[self getMethodStr:method] url:url parameters:parameters callback:^(id responseObject, NSError *error) {
+            [self httpWithMethod:method url:url parameters:parameters callback:^(id responseObject, NSError *error) {
                 [self setHttpCache:responseObject url:url parameters:parameters];
                 callback ? callback(responseObject, error) : nil;
             }];
@@ -320,14 +320,14 @@ static YYCache *_dataCache;
     }else{
         //缓存策略错误，将采取 HJCachePolicyIgnoreCache 策略
         ATLog(@"缓存策略错误");
-        [self httpWithMethod:[self getMethodStr:method] url:url parameters:parameters callback:callback];
+        [self httpWithMethod:method url:url parameters:parameters callback:callback];
     }
     
 }
 
 
 #pragma mark -- 网络请求处理
-+(void)httpWithMethod:(NSString *)method url:(NSString *)url parameters:(NSDictionary *)parameters callback:(HJHttpRequest)callback{
++(void)httpWithMethod:(HJRequestMethod)method url:(NSString *)url parameters:(NSDictionary *)parameters callback:(HJHttpRequest)callback{
     
     [self dataTaskWithHTTPMethod:method url:url parameters:parameters callback:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
         if (_logEnabled) {
@@ -345,48 +345,22 @@ static YYCache *_dataCache;
     }];
 }
 
-+ (NSString *)getMethodStr:(HJRequestMethod)method{
-    switch (method) {
-        case HJRequestMethodGET:
-            return @"GET";
-            break;
-        case HJRequestMethodPOST:
-            return @"POST";
-            break;
-        case HJRequestMethodHEAD:
-            return @"HEAD";
-            break;
-        case HJRequestMethodPUT:
-            return @"PUT";
-            break;
-        case HJRequestMethodPATCH:
-            return @"PATCH";
-            break;
-        case HJRequestMethodDELETE:
-            return @"DELETE";
-            break;
-
-        default:
-            break;
-    }
-}
-
-+(void)dataTaskWithHTTPMethod:(NSString *)method url:(NSString *)url parameters:(NSDictionary *)parameters
++(void)dataTaskWithHTTPMethod:(HJRequestMethod)method url:(NSString *)url parameters:(NSDictionary *)parameters
                       callback:(void (^)(NSURLSessionDataTask * _Nonnull, id _Nullable))callback
                       failure:(void (^)(NSURLSessionDataTask * _Nullable, NSError * _Nonnull))failure
 {
     NSURLSessionTask *sessionTask;
-    if ([method isEqualToString:@"POST"]) {
-        sessionTask = [_sessionManager POST:url parameters:parameters progress:nil success:callback failure:failure];
-    }else if ([method isEqualToString:@"GET"]){
+    if (method == HJRequestMethodGET){
         sessionTask = [_sessionManager GET:url parameters:parameters progress:nil success:callback failure:failure];
-    }else if ([method isEqualToString:@"HEAD"]){
+    }else if (method == HJRequestMethodPOST) {
+        sessionTask = [_sessionManager POST:url parameters:parameters progress:nil success:callback failure:failure];
+    }else if (method == HJRequestMethodHEAD) {
         sessionTask = [_sessionManager HEAD:url parameters:parameters success:nil failure:failure];
-    }else if ([method isEqualToString:@"PUT"]){
+    }else if (method == HJRequestMethodPUT) {
         sessionTask = [_sessionManager PUT:url parameters:parameters success:nil failure:failure];
-    }else if ([method isEqualToString:@"PATCH"]){
+    }else if (method == HJRequestMethodPATCH) {
         sessionTask = [_sessionManager PATCH:url parameters:parameters success:nil failure:failure];
-    }else if ([method isEqualToString:@"DELETE"]){
+    }else if (method == HJRequestMethodDELETE) {
         sessionTask = [_sessionManager DELETE:url parameters:parameters success:nil failure:failure];
     }
     //添加最新的sessionTask到数组
@@ -491,6 +465,31 @@ static YYCache *_dataCache;
     downloadTask ? [[self allSessionTask] addObject:downloadTask] : nil;
 }
 
++ (NSString *)getMethodStr:(HJRequestMethod)method{
+    switch (method) {
+        case HJRequestMethodGET:
+            return @"GET";
+            break;
+        case HJRequestMethodPOST:
+            return @"POST";
+            break;
+        case HJRequestMethodHEAD:
+            return @"HEAD";
+            break;
+        case HJRequestMethodPUT:
+            return @"PUT";
+            break;
+        case HJRequestMethodPATCH:
+            return @"PATCH";
+            break;
+        case HJRequestMethodDELETE:
+            return @"DELETE";
+            break;
+            
+        default:
+            break;
+    }
+}
 
 #pragma mark -- 网络缓存
 + (YYCache *)getYYCache
