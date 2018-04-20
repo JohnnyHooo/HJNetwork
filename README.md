@@ -5,6 +5,12 @@
 [![License](https://img.shields.io/cocoapods/l/HJNetwork.svg?style=flat)](http://cocoapods.org/pods/HJNetwork)
 [![Platform](https://img.shields.io/cocoapods/p/HJNetwork.svg?style=flat)](http://cocoapods.org/pods/HJNetwork)
 
+## 前言
+
+	本来是想在GitHub找一个符合自己App的网络请求库，结果就是要么不支持缓存或者就是不支持RESTful API 请求，或者带缓存的又不支持过滤某一些字段，挣扎之下就有了 HJNetwork 这个库。初衷就是在最大程度下满足所有App的日常需求。
+<br /> 
+
+## 特点
 - HJNetwork 对 AFHTTPSessionManager 进行二次封装。包括网络请求、文件上传、文件下载这三个方法。并且支持RESTful API GET、POST、PUT、DELETE、PATCH的请求。同时使用YYCache做了强大的缓存策略。
 
 - 拥有 AFNetwork 大部分常用功能，包括网络状态监听等，提供类方法和实例方法调用。
@@ -13,6 +19,8 @@
 
 - 支持多种缓存策略。
 
+<br /> 
+<br /> 
 
 
 ## 安装
@@ -22,11 +30,12 @@
 ```ruby
 pod 'HJNetwork'
 ```
+<br /> 
+
 ## 使用
+**所有方法都可以直接看 HJNetworking.h 中的声明以及注释。**
 
-所有方法都可以直接看 HJNetworking.h 中的声明以及注释。
-
-### HJNetwork 配置
+### HJNetwork 的全局配置
 
 #### 设置请求根路径
 
@@ -71,6 +80,9 @@ pod 'HJNetwork'
         }
     }];
 ```
+<br /> 
+<br /> 
+
 ### 网络请求
 
 #### 缓存策略
@@ -175,6 +187,8 @@ typedef NS_ENUM(NSUInteger, HJCachePolicy){
                progress:(HJHttpProgress)progress
                 callback:(HJHttpDownload)callback;
 ```
+<br /> 
+<br /> 
 
 ### 缓存处理
 #### 设置最大缓存内存
