@@ -181,14 +181,14 @@ static YYCache *_dataCache;
             return @"先从缓存读取数据，如果没有再从网络获取";
             break;
         case HJCachePolicyNetworkElseCache:
-            return @"先从网络获取数据，如果没有，此处的没有可以理解为访问网络失败，再从缓存读取";
+            return @"先从网络获取数据，如果没有再从缓存读取数据";
             break;
         case HJCachePolicyCacheThenNetwork:
-            return @"先从缓存读取数据，然后在本地缓存数据，无论结果如何都会再次从网络获取数据";
+            return @"先从缓存读取数据，然后再从网络获取数据，Block将产生两次调用";
             break;
             
         default:
-            return @"未知缓存策略";
+            return @"未知缓存策略，采用HJCachePolicyIgnoreCache策略";
             break;
     }
 }
