@@ -1,9 +1,9 @@
 {
   "name": "HJNetwork",
-  "version": "0.1.0",
+  "version": "1.0.2",
   "summary": "A short description of HJNetwork.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/Johnny/HJNetwork",
+  "description": "基于 AFNetworking + YYCache 的二次封装，支持RESTful API，缓存策略的网络请求框架。",
+  "homepage": "https://github.com/JohnnyHooo/HJNetwork",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,8 +12,8 @@
     "Johnny": "hujin123@vip.qq.com"
   },
   "source": {
-    "git": "https://github.com/Johnny/HJNetwork.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/JohnnyHooo/HJNetwork.git",
+    "tag": "1.0.2"
   },
   "platforms": {
     "ios": "8.0"

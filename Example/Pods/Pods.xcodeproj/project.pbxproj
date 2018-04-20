@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		00C05031BBA5BA48A00FE41348F41BDA /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F46AEC45E5F07D38E15582E5D66B051 /* UIRefreshControl+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02262AB9D8945022AA7F7FA138F25359 /* Pods-HJNetwork_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F9281E548C17E0DE06B4990D1C27A10F /* Pods-HJNetwork_Tests-dummy.m */; };
 		097EA5E1EF29A3CD358043A801B7B5FC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 893E9920BB833AD536FB0ABBCC691953 /* Foundation.framework */; };
 		0D1FFD30267C0776FD3E88EFF51E312F /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = DB0296289C2EB2B3D4C98963D90450EA /* UIImageView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		13C8BFB7B58DF304631C234A0B0B5EC7 /* YYDiskCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 450522246BF5558078F47CD4742FD1FA /* YYDiskCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		140F458AB7312414FC423FEED70A3733 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BBADBB5BA4583F1CE5EA9BA99FEE3D47 /* UIActivityIndicatorView+AFNetworking.m */; };
 		1607F3F8AAC9935F5FC04E8E5F218156 /* YYMemoryCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E4341A0D9DC28D3A76C5DFB1E636590 /* YYMemoryCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1900A73104E220725EBC477F71493137 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 893E9920BB833AD536FB0ABBCC691953 /* Foundation.framework */; };
 		1E2A6D057E20BE8F5ED3E594F7B8C286 /* AFNetworking-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E6578728403FFA57DC67E1FB2C1C2654 /* AFNetworking-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2289211E5E85E4848C2A5B2963BDEDE4 /* HJNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 915998911CA9E6CADB8902DD718CFFEB /* HJNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		29476636EA86BEFC4CB833D3BB7A52D7 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B97500BD8673BB41BE4EE0BDAB2CE05 /* AFURLRequestSerialization.m */; };
@@ -24,8 +26,8 @@
 		35CBB7B255FD8D412AFCECBC4311A847 /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 034BA271E002121AFD86D6569FF61751 /* AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3712ED78FA898CD7353477C196C75C2F /* YYCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A046B5A0A8CF5187BDC97F0B38947A23 /* YYCache.framework */; };
 		371798A32F9E8472237D078FA9652FF7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD0C9048951C72E4F9EC44D67906E1E8 /* UIKit.framework */; };
+		404DD2EBD8A7F919B4715ACD047B7FB3 /* Pods-HJNetwork_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BBA6ED50D4380C768853F6F2E2211F3 /* Pods-HJNetwork_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42AF1BB1ED090CC9E588A463441D09E3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53CD99115EF076B048BE6B62F07948F0 /* SystemConfiguration.framework */; };
-		4313D23B43422A31EC142272E0022B04 /* Pods-HJNetwork_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F9281E548C17E0DE06B4990D1C27A10F /* Pods-HJNetwork_Tests-dummy.m */; };
 		4442D8453D210EFC13CFE2CAF862ED1D /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E0A9AFE2401D114C53AA50346E9D0984 /* AFHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45F802D04B3BE0CAEC586C2F3016027B /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = F927BD7682B40866EEAD9FE36C3537F5 /* UIActivityIndicatorView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		47F04CBDF6C54B220F6AEECEF15264D5 /* AFAutoPurgingImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BFBDE4A5073B0428E8E1F7463698134 /* AFAutoPurgingImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -51,7 +53,6 @@
 		A398D63C8DED664D99A864D79881A13C /* AFImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA28370A25D16AA1D93387D8D41E0A3 /* AFImageDownloader.m */; };
 		A8C297643282E0CF5E7DF9CB6E23A0D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 893E9920BB833AD536FB0ABBCC691953 /* Foundation.framework */; };
 		AE976B0E8E3DD81E4F49DBEF19D3C0AD /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA7180F3186D2A8BED4694E74C282F0 /* AFURLSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AF5F3E591F7C4BBDD7D1E2F498FC911E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 893E9920BB833AD536FB0ABBCC691953 /* Foundation.framework */; };
 		B16A078FC7FBC172A266A336AEF7F673 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F0F658FBC12BB418C13C8FB1A6B148 /* UIRefreshControl+AFNetworking.m */; };
 		BDDCBB68BF2BA6D220367326A5470E9E /* YYCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 403C4BA3AFB4A2E83D06FCEA3195957E /* YYCache.m */; };
 		CEB2F0E229EF841D92C780C3FFDF1BEA /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8D687BA70C01ABC47A7634BC3D47AC /* AFSecurityPolicy.m */; };
@@ -73,7 +74,6 @@
 		FD305E8735B4B07A16E08ABB944EF614 /* YYCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D641A5645C9AF635ED565EB146F7EC8 /* YYCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FDE90E29F082F822D3BAE043F09453CF /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBA0CF186CF32B07B942B355C28E6313 /* CoreFoundation.framework */; };
 		FEF6EACE962EAE70E2EAC5F3C83EF7C8 /* AFImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 39CE6AD418AA0EAFBFF0291ACC7D6E19 /* AFImageDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FF53E086306C3D722B2E99E8DA5CB0EB /* Pods-HJNetwork_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BBA6ED50D4380C768853F6F2E2211F3 /* Pods-HJNetwork_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,13 +90,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = CF671F7E57B92905F1CC91D036D6B4A7;
 			remoteInfo = AFNetworking;
-		};
-		A47476D576B824BC913B7E20FA0A6D62 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1AF4FDB9F091947CC02634CB396100A4;
-			remoteInfo = "Pods-HJNetwork_Example";
 		};
 		AB2011C0B7AEA5288114E194274CF1F5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -266,11 +259,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9D85E63D187DD7E0F4D0B96761A5CFBC /* Frameworks */ = {
+		97726E456B12D150A940586103EBA307 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF5F3E591F7C4BBDD7D1E2F498FC911E /* Foundation.framework in Frameworks */,
+				1900A73104E220725EBC477F71493137 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,11 +602,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C60CF2536D4CEC5BF2B9BACC6F832BD1 /* Headers */ = {
+		F7ADBB7DE2BB457C030B63CAD40105EF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF53E086306C3D722B2E99E8DA5CB0EB /* Pods-HJNetwork_Tests-umbrella.h in Headers */,
+				404DD2EBD8A7F919B4715ACD047B7FB3 /* Pods-HJNetwork_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -693,18 +686,17 @@
 			productReference = C4BEC486645D86F0133796194C9655DD /* AFNetworking.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		E2BF871667B49195028CFFE881EF7827 /* Pods-HJNetwork_Tests */ = {
+		DE4F1DFAD8F9A172423B1DC7529DC63A /* Pods-HJNetwork_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2B061AAB115F872AFF14F599D2255174 /* Build configuration list for PBXNativeTarget "Pods-HJNetwork_Tests" */;
+			buildConfigurationList = BAA359BF9BE62B92E01051C05DA7795B /* Build configuration list for PBXNativeTarget "Pods-HJNetwork_Tests" */;
 			buildPhases = (
-				A5D0AA7D88ABD3B5DA3FB8B1C57FCFC7 /* Sources */,
-				9D85E63D187DD7E0F4D0B96761A5CFBC /* Frameworks */,
-				C60CF2536D4CEC5BF2B9BACC6F832BD1 /* Headers */,
+				2A889C52370E737EB604DC724F302C4E /* Sources */,
+				97726E456B12D150A940586103EBA307 /* Frameworks */,
+				F7ADBB7DE2BB457C030B63CAD40105EF /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B00B7FB32976A153B7600FAE096F77A5 /* PBXTargetDependency */,
 			);
 			name = "Pods-HJNetwork_Tests";
 			productName = "Pods-HJNetwork_Tests";
@@ -735,13 +727,21 @@
 				CF671F7E57B92905F1CC91D036D6B4A7 /* AFNetworking */,
 				CE28F3A25F5EF8691D39483137DD3F8D /* HJNetwork */,
 				1AF4FDB9F091947CC02634CB396100A4 /* Pods-HJNetwork_Example */,
-				E2BF871667B49195028CFFE881EF7827 /* Pods-HJNetwork_Tests */,
+				DE4F1DFAD8F9A172423B1DC7529DC63A /* Pods-HJNetwork_Tests */,
 				AEAE831C5385F0C8E5EABB4BFEFADF3E /* YYCache */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2A889C52370E737EB604DC724F302C4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02262AB9D8945022AA7F7FA138F25359 /* Pods-HJNetwork_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		676E7C80DF46F0A44DA7AB4150FB094C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -770,14 +770,6 @@
 				34C88657FE7ABE9F833623F94952D253 /* UIProgressView+AFNetworking.m in Sources */,
 				B16A078FC7FBC172A266A336AEF7F673 /* UIRefreshControl+AFNetworking.m in Sources */,
 				7CE16B1BF75DF396768A0A3CFD968DB1 /* UIWebView+AFNetworking.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A5D0AA7D88ABD3B5DA3FB8B1C57FCFC7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4313D23B43422A31EC142272E0022B04 /* Pods-HJNetwork_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -817,12 +809,6 @@
 			target = CE28F3A25F5EF8691D39483137DD3F8D /* HJNetwork */;
 			targetProxy = AB2011C0B7AEA5288114E194274CF1F5 /* PBXContainerItemProxy */;
 		};
-		B00B7FB32976A153B7600FAE096F77A5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-HJNetwork_Example";
-			target = 1AF4FDB9F091947CC02634CB396100A4 /* Pods-HJNetwork_Example */;
-			targetProxy = A47476D576B824BC913B7E20FA0A6D62 /* PBXContainerItemProxy */;
-		};
 		C7CE5A69718C90987CAB17EFF17ADA8C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = YYCache;
@@ -844,11 +830,131 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0F2A57F24C5885982174DE5BD2BB0A62 /* Release */ = {
+		07CA4243481C27539A4BA142920A8D1E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 836467AD6476150B5F53AB35296DBE5A /* Pods-HJNetwork_Example.release.xcconfig */;
+			baseConfigurationReference = F60D6FD802BF3284602E02BF4D98FDBA /* Pods-HJNetwork_Tests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-HJNetwork_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HJNetwork_Tests/Pods-HJNetwork_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_HJNetwork_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		0A2CB04235132FF7136AFE4AE7085DB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D26BC14E7F817DC037483D307118F640 /* AFNetworking.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AFNetworking/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
+				PRODUCT_NAME = AFNetworking;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1C567E1A032B9BFD3203029F1164D3E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D26BC14E7F817DC037483D307118F640 /* AFNetworking.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AFNetworking/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
+				PRODUCT_NAME = AFNetworking;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		255DBDFC191EB50E02731D2F2B616FC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F81131ED9D5092A1845792E972960E64 /* YYCache.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/YYCache/YYCache-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/YYCache/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/YYCache/YYCache.modulemap";
+				PRODUCT_NAME = YYCache;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3FFFE83FFEA35838D01313BBA59BAFB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8061D3306B3E9944084E90212E46ECD6 /* Pods-HJNetwork_Example.debug.xcconfig */;
+			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -868,75 +974,7 @@
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		1C59D291158D5CFADC65ED7311E78251 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F60D6FD802BF3284602E02BF4D98FDBA /* Pods-HJNetwork_Tests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-HJNetwork_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-HJNetwork_Tests/Pods-HJNetwork_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		5BAC430CBF3980955E9A9306E5304035 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C76F2EE80245F3BA4D780D5FB026129 /* Pods-HJNetwork_Tests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-HJNetwork_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-HJNetwork_Tests/Pods-HJNetwork_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Pods_HJNetwork_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -945,37 +983,7 @@
 			};
 			name = Debug;
 		};
-		6F8E3041E7FA53F5974376A86A871A87 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D542E266B70E3CAD4BCCF31176AE497 /* HJNetwork.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/HJNetwork/HJNetwork-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/HJNetwork/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/HJNetwork/HJNetwork.modulemap";
-				PRODUCT_MODULE_NAME = HJNetwork;
-				PRODUCT_NAME = HJNetwork;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		8B33C5230DE4A9DFA6D8F46505DD7AF7 /* Debug */ = {
+		5011B865762FC0C0A28ECEC4CB63DC68 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1007,7 +1015,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1032,13 +1039,14 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		927A26B24429C7BBF4D7DD85069EBA82 /* Release */ = {
+		621718EA82A79A3204D9C5D416FD7DBB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8D542E266B70E3CAD4BCCF31176AE497 /* HJNetwork.xcconfig */;
 			buildSettings = {
@@ -1057,7 +1065,35 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/HJNetwork/HJNetwork.modulemap";
-				PRODUCT_MODULE_NAME = HJNetwork;
+				PRODUCT_NAME = HJNetwork;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		68A99768808BE602088B0AFAC9F4A1BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D542E266B70E3CAD4BCCF31176AE497 /* HJNetwork.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/HJNetwork/HJNetwork-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HJNetwork/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/HJNetwork/HJNetwork.modulemap";
 				PRODUCT_NAME = HJNetwork;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1069,9 +1105,9 @@
 			};
 			name = Release;
 		};
-		95043F39FD35B0C84D00A8920F4AE3FB /* Release */ = {
+		803AA55E90E2001E04C7D301396340CF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F81131ED9D5092A1845792E972960E64 /* YYCache.xcconfig */;
+			baseConfigurationReference = 2C76F2EE80245F3BA4D780D5FB026129 /* Pods-HJNetwork_Tests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1082,49 +1118,17 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/YYCache/YYCache-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/YYCache/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/YYCache/YYCache.modulemap";
-				PRODUCT_MODULE_NAME = YYCache;
-				PRODUCT_NAME = YYCache;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		B299F98F81A75A7253A2B91023604961 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8061D3306B3E9944084E90212E46ECD6 /* Pods-HJNetwork_Example.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-HJNetwork_Example/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-HJNetwork_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-HJNetwork_Example/Pods-HJNetwork_Example.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-HJNetwork_Tests/Pods-HJNetwork_Tests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Pods_HJNetwork_Tests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1133,7 +1137,7 @@
 			};
 			name = Debug;
 		};
-		B42B54097A876E8A982CBF5DAA91B1AB /* Release */ = {
+		827269710C98D60C14D46BC6AF9BF728 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1165,7 +1169,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1186,42 +1189,13 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		E55F33F8AB663E35174F84964A71BD87 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D26BC14E7F817DC037483D307118F640 /* AFNetworking.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AFNetworking/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
-				PRODUCT_MODULE_NAME = AFNetworking;
-				PRODUCT_NAME = AFNetworking;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		F79E8AB22EA020E7817850F22644425B /* Debug */ = {
+		BF80EE223745298121C415EEBB08729D /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F81131ED9D5092A1845792E972960E64 /* YYCache.xcconfig */;
 			buildSettings = {
@@ -1240,38 +1214,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/YYCache/YYCache.modulemap";
-				PRODUCT_MODULE_NAME = YYCache;
 				PRODUCT_NAME = YYCache;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		F8C5D495DCE994EA0D4CE27454017EAA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D26BC14E7F817DC037483D307118F640 /* AFNetworking.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AFNetworking/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
-				PRODUCT_MODULE_NAME = AFNetworking;
-				PRODUCT_NAME = AFNetworking;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -1282,23 +1225,47 @@
 			};
 			name = Release;
 		};
+		D49009EE2C6DA892DBC0A93477BF0029 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 836467AD6476150B5F53AB35296DBE5A /* Pods-HJNetwork_Example.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-HJNetwork_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HJNetwork_Example/Pods-HJNetwork_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_HJNetwork_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2B061AAB115F872AFF14F599D2255174 /* Build configuration list for PBXNativeTarget "Pods-HJNetwork_Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5BAC430CBF3980955E9A9306E5304035 /* Debug */,
-				1C59D291158D5CFADC65ED7311E78251 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8B33C5230DE4A9DFA6D8F46505DD7AF7 /* Debug */,
-				B42B54097A876E8A982CBF5DAA91B1AB /* Release */,
+				5011B865762FC0C0A28ECEC4CB63DC68 /* Debug */,
+				827269710C98D60C14D46BC6AF9BF728 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1306,8 +1273,8 @@
 		31E01BC98C827BD8A78F94173CDCC418 /* Build configuration list for PBXNativeTarget "AFNetworking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E55F33F8AB663E35174F84964A71BD87 /* Debug */,
-				F8C5D495DCE994EA0D4CE27454017EAA /* Release */,
+				0A2CB04235132FF7136AFE4AE7085DB5 /* Debug */,
+				1C567E1A032B9BFD3203029F1164D3E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1315,8 +1282,8 @@
 		82C759A25A04564B5B04B474094B1CFD /* Build configuration list for PBXNativeTarget "HJNetwork" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6F8E3041E7FA53F5974376A86A871A87 /* Debug */,
-				927A26B24429C7BBF4D7DD85069EBA82 /* Release */,
+				621718EA82A79A3204D9C5D416FD7DBB /* Debug */,
+				68A99768808BE602088B0AFAC9F4A1BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1324,8 +1291,17 @@
 		A2D4B0F1C8628BB7FA4E365161E6DD2B /* Build configuration list for PBXNativeTarget "YYCache" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F79E8AB22EA020E7817850F22644425B /* Debug */,
-				95043F39FD35B0C84D00A8920F4AE3FB /* Release */,
+				255DBDFC191EB50E02731D2F2B616FC4 /* Debug */,
+				BF80EE223745298121C415EEBB08729D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BAA359BF9BE62B92E01051C05DA7795B /* Build configuration list for PBXNativeTarget "Pods-HJNetwork_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				803AA55E90E2001E04C7D301396340CF /* Debug */,
+				07CA4243481C27539A4BA142920A8D1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1333,8 +1309,8 @@
 		D4058F7257E91DD9BAEFE9FE9842637A /* Build configuration list for PBXNativeTarget "Pods-HJNetwork_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B299F98F81A75A7253A2B91023604961 /* Debug */,
-				0F2A57F24C5885982174DE5BD2BB0A62 /* Release */,
+				3FFFE83FFEA35838D01313BBA59BAFB4 /* Debug */,
+				D49009EE2C6DA892DBC0A93477BF0029 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

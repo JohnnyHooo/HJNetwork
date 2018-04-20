@@ -28,11 +28,17 @@ typedef NS_ENUM(NSUInteger, HJCachePolicy){
 
 /**请求方式*/
 typedef NS_ENUM(NSUInteger, HJRequestMethod){
+    /**GET请求方式*/
     HJRequestMethodGET = 0,
+    /**POST请求方式*/
     HJRequestMethodPOST,
+    /**HEAD请求方式*/
     HJRequestMethodHEAD,
+    /**PUT请求方式*/
     HJRequestMethodPUT,
+    /**PATCH请求方式*/
     HJRequestMethodPATCH,
+    /**DELETE请求方式*/
     HJRequestMethodDELETE
 };
 
@@ -77,39 +83,38 @@ typedef void(^HJNetworkStatus)(HJNetworkStatusType status);
 
 @interface HJNetwork : NSObject
 
-/** 输出Log信息开关(默认打开)*/
+/**输出Log信息开关(默认打开)*/
 + (void)setLogEnabled:(BOOL)bFlag;
 
-/*过滤缓存Key*/
+/**过滤缓存Key*/
 + (void)setFiltrationCacheKey:(NSArray *)filtrationCacheKey;
 
 /**设置接口根路径, 设置后所有的网络访问都使用相对路径 尽量以"/"结束*/
 + (void)setBaseURL:(NSString *)baseURL;
 
-/**设置接口请求头*/
+/** 设置接口请求头 */
 + (void)setHeadr:(NSDictionary *)heder;
 
 /**设置接口基本参数(如:用户ID, Token)*/
 + (void)setBaseParameters:(NSDictionary *)parameters;
 
-
-/*实时获取网络状态*/
+/**实时获取网络状态*/
 + (void)getNetworkStatusWithBlock:(HJNetworkStatus)networkStatus;
 
-/*判断是否有网*/
+/**判断是否有网*/
 + (BOOL)isNetwork;
 
-/*是否是手机网络*/
+/**是否是手机网络*/
 + (BOOL)isWWANNetwork;
 
-/*是否是WiFi网络*/
+/**是否是WiFi网络*/
 + (BOOL)isWiFiNetwork;
 
-/*取消所有Http请求*/
+/**取消所有Http请求*/
 + (void)cancelAllRequest;
 
-/*取消指定URL的Http请求*/
-+ (void)cancelRequestWithURLStr:(NSString *)URLStr;
+/**取消指定URL的Http请求*/
++ (void)cancelRequestWithURL:(NSString *)url;
 
 /**设置请求超时时间(默认30s) */
 + (void)setRequestTimeoutInterval:(NSTimeInterval)time;
@@ -124,12 +129,12 @@ typedef void(^HJNetworkStatus)(HJNetworkStatusType status);
  @param url 请求地址
  @param parameters 请求参数
  @param cachePolicy 缓存策略
- @param success 请求回调
+ @param callback 请求回调
  */
 + (void)GETWithURL:(NSString *)url
         parameters:(NSDictionary *)parameters
        cachePolicy:(HJCachePolicy)cachePolicy
-           success:(HJHttpRequest)success;
+           callback:(HJHttpRequest)callback;
 
 
 /**
@@ -138,12 +143,12 @@ typedef void(^HJNetworkStatus)(HJNetworkStatusType status);
  @param url 请求地址
  @param parameters 请求参数
  @param cachePolicy 缓存策略
- @param success 请求回调
+ @param callback 请求回调
  */
 + (void)POSTWithURL:(NSString *)url
          parameters:(NSDictionary *)parameters
         cachePolicy:(HJCachePolicy)cachePolicy
-            success:(HJHttpRequest)success;
+            callback:(HJHttpRequest)callback;
 
 /**
  HEAD请求
@@ -151,12 +156,12 @@ typedef void(^HJNetworkStatus)(HJNetworkStatusType status);
  @param url 请求地址
  @param parameters 请求参数
  @param cachePolicy 缓存策略
- @param success 请求回调
+ @param callback 请求回调
  */
 + (void)HEADWithURL:(NSString *)url
          parameters:(NSDictionary *)parameters
         cachePolicy:(HJCachePolicy)cachePolicy
-            success:(HJHttpRequest)success;
+            callback:(HJHttpRequest)callback;
 
 
 /**
@@ -165,12 +170,12 @@ typedef void(^HJNetworkStatus)(HJNetworkStatusType status);
  @param url 请求地址
  @param parameters 请求参数
  @param cachePolicy 缓存策略
- @param success 请求回调
+ @param callback 请求回调
  */
 + (void)PUTWithURL:(NSString *)url
          parameters:(NSDictionary *)parameters
         cachePolicy:(HJCachePolicy)cachePolicy
-            success:(HJHttpRequest)success;
+            callback:(HJHttpRequest)callback;
 
 
 
@@ -180,12 +185,12 @@ typedef void(^HJNetworkStatus)(HJNetworkStatusType status);
  @param url 请求地址
  @param parameters 请求参数
  @param cachePolicy 缓存策略
- @param success 请求回调
+ @param callback 请求回调
  */
 + (void)PATCHWithURL:(NSString *)url
          parameters:(NSDictionary *)parameters
         cachePolicy:(HJCachePolicy)cachePolicy
-            success:(HJHttpRequest)success;
+            callback:(HJHttpRequest)callback;
 
 
 /**
@@ -194,12 +199,12 @@ typedef void(^HJNetworkStatus)(HJNetworkStatusType status);
  @param url 请求地址
  @param parameters 请求参数
  @param cachePolicy 缓存策略
- @param success 请求回调
+ @param callback 请求回调
  */
 + (void)DELETEWithURL:(NSString *)url
          parameters:(NSDictionary *)parameters
         cachePolicy:(HJCachePolicy)cachePolicy
-            success:(HJHttpRequest)success;
+            callback:(HJHttpRequest)callback;
 
 
 /**
@@ -209,46 +214,67 @@ typedef void(^HJNetworkStatus)(HJNetworkStatusType status);
  @param url 请求地址
  @param parameters 请求参数
  @param cachePolicy 缓存策略
- @param success 请求回调
+ @param callback 请求回调
  */
 + (void)HTTPWithMethod:(HJRequestMethod)method
                     url:(NSString *)url
              parameters:(NSDictionary *)parameters
             cachePolicy:(HJCachePolicy)cachePolicy
-                success:(HJHttpRequest)success;
+                callback:(HJHttpRequest)callback;
+
+
+/**
+ 上传文件
+ 
+ @param url 请求地址
+ @param parameters 请求参数
+ @param name 文件对应服务器上的字段
+ @param filePath 文件路径
+ @param progress 上传进度
+ @param callback 请求回调
+ */
++ (void)uploadFileWithURL:(NSString *)url
+               parameters:(NSDictionary *)parameters
+                     name:(NSString *)name
+                 filePath:(NSString *)filePath
+                 progress:(HJHttpProgress)progress
+                  callback:(HJHttpRequest)callback;
+
 
 /**
  上传图片文件
 
- @param URLStr 请求地址
+ @param url 请求地址
  @param parameters 请求参数
  @param images 图片数组
  @param name 文件对应服务器上的字段
  @param fileName 文件名
  @param mimeType 图片文件类型：png/jpeg(默认类型)
  @param progress 上传进度
- @param success 请求回调
+ @param callback 请求回调
  */
-+ (void)uploadURLStr:(NSString *)URLStr
-                               parameters:(NSDictionary *)parameters
-                               images:(NSArray<UIImage *> *)images
-                               name:(NSString *)name
-                               fileName:(NSString *)fileName
-                               mimeType:(NSString *)mimeType
-                               progress:(HJHttpProgress)progress
-                                    success:(HJHttpRequest)success;
++ (void)uploadImageURL:(NSString *)url
+       parameters:(NSDictionary *)parameters
+           images:(NSArray<UIImage *> *)images
+             name:(NSString *)name
+         fileName:(NSString *)fileName
+         mimeType:(NSString *)mimeType
+         progress:(HJHttpProgress)progress
+          callback:(HJHttpRequest)callback;
+
+
 /**
  下载文件
 
- @param URLStr 请求地址
+ @param url 请求地址
  @param fileDir 文件存储的目录(默认存储目录为Download)
  @param progress 文件下载的进度信息
- @param success 请求回调
+ @param callback 请求回调
  */
-+ (void)downloadWithURLStr:(NSString *)URLStr
-                                          fileDir:(NSString *)fileDir
-                                          progress:(HJHttpProgress)progress
-                                          success:(HJHttpDownload)success;
++ (void)downloadWithURL:(NSString *)url
+                fileDir:(NSString *)fileDir
+               progress:(HJHttpProgress)progress
+                callback:(HJHttpDownload)callback;
 
 
 #pragma mark -- 网络缓存
@@ -304,7 +330,8 @@ typedef void(^HJNetworkStatus)(HJNetworkStatusType status);
  *  删除所有网络缓存
  *  推荐使用该方法 不会阻塞主线程，同时返回Progress
  */
-+ (void)removeAllHttpCacheBlock:(void(^)(int removedCount, int totalCount))progress endBlock:(void(^)(BOOL error))end;
++ (void)removeAllHttpCacheBlock:(void(^)(int removedCount, int totalCount))progress
+                       endBlock:(void(^)(BOOL error))end;
 
 #pragma mark -- 重置AFHTTPSessionManager相关属性
 
