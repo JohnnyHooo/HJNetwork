@@ -6,9 +6,9 @@
 [![Platform](https://img.shields.io/cocoapods/p/HJNetwork.svg?style=flat)](http://cocoapods.org/pods/HJNetwork)
 ## 前言
 ```ruby
-本来是想在GitHub找一个符合自己App的网络请求库，结果就是要么不支持缓存或者不支持RESTful API 请求，
+本来是想在GitHub找一个符合自己App的网络请求库，结果就是要么不支持数据缓存或者不支持RESTful API 请求，
 又或者带缓存的又不支持过滤某一些参数字段(否则无法得到缓存)，带着这样的需求之下就有了 “HJNetwork” 这个库。
-初衷就是在最大程度下满足所有App的日常需求。
+初衷就是尽最大的努力最大程度下满足所有App的日常需求。
 ```
 	
 <br /> 
