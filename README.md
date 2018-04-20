@@ -205,7 +205,7 @@ typedef NS_ENUM(NSUInteger, HJCachePolicy){
 + (void)getAllHttpCacheSizeBlock:(void(^)(NSInteger totalCount))block;
 
 ```
-#### 获取网络缓存的总大小
+#### 删除所有网络缓存
 ```objc
 /**
  *  删除所有网络缓存
