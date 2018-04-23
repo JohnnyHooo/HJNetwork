@@ -99,9 +99,9 @@ typedef NS_ENUM(NSUInteger, HJCachePolicy){
     HJCachePolicyNetworkOnly = 2,
     /**先从缓存读取数据，如果没有再从网络获取*/
     HJCachePolicyCacheElseNetwork = 3,
-    /**先从网络获取数据，如果没有，此处的没有可以理解为访问网络失败，再从缓存读取*/
+    /**先从网络获取数据，如果没有在从缓存获取，此处的没有可以理解为访问网络失败，再从缓存读取*/
     HJCachePolicyNetworkElseCache = 4,
-    /**先从缓存读取数据，然后在本地缓存数据，无论结果如何都会再次从网络获取数据，在这种情况下，Block将产生两次调用*/
+    /**先从缓存读取数据，然后在从网络获取并且缓存，在这种情况下，Block将产生两次调用*/
     HJCachePolicyCacheThenNetwork = 5
 };
 ```
