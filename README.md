@@ -6,9 +6,9 @@
 [![Platform](https://img.shields.io/cocoapods/p/HJNetwork.svg?style=flat)](http://cocoapods.org/pods/HJNetwork)
 ## 前言
 ```ruby
-本来是想在GitHub找一个符合自己App的网络请求库，结果就是要么不支持缓存或者不支持RESTful API 请求，
+本来是想在GitHub找一个符合自己App的网络请求库，结果就是要么不支持数据缓存或者不支持RESTful API 请求，
 又或者带缓存的又不支持过滤某一些参数字段(否则无法得到缓存)，带着这样的需求之下就有了 “HJNetwork” 这个库。
-初衷就是在最大程度下满足所有App的日常需求。
+初衷就是尽最大的努力最大程度下满足所有App的日常需求。
 ```
 	
 <br /> 
@@ -22,6 +22,9 @@
 - 非常好的扩展性，开放出了YYCache和AFNetwork的实例对象，更便于满足各种不同需求。
 
 - 支持多种缓存策略。
+
+- 按App版本号缓存网络请求内容也可自定义版本号。
+
 
 ## 安装
 
@@ -96,9 +99,9 @@ typedef NS_ENUM(NSUInteger, HJCachePolicy){
     HJCachePolicyNetworkOnly = 2,
     /**先从缓存读取数据，如果没有再从网络获取*/
     HJCachePolicyCacheElseNetwork = 3,
-    /**先从网络获取数据，如果没有，此处的没有可以理解为访问网络失败，再从缓存读取*/
+    /**先从网络获取数据，如果没有在从缓存获取，此处的没有可以理解为访问网络失败，再从缓存读取*/
     HJCachePolicyNetworkElseCache = 4,
-    /**先从缓存读取数据，然后在本地缓存数据，无论结果如何都会再次从网络获取数据，在这种情况下，Block将产生两次调用*/
+    /**先从缓存读取数据，然后在从网络获取并且缓存，在这种情况下，Block将产生两次调用*/
     HJCachePolicyCacheThenNetwork = 5
 };
 ```
