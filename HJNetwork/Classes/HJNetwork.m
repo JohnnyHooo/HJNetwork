@@ -329,10 +329,10 @@ static YYCache *_dataCache;
         [self httpWithMethod:method url:url parameters:parameters callback:^(id responseObject, NSError *error) {
             if (responseObject && !error) {
                 callback ? callback(responseObject, error) : nil;
+                [self setHttpCache:responseObject url:url parameters:parameters];
             }else{
                 [self httpCacheForURL:url parameters:parameters withBlock:^(id<NSCoding> object) {
                     callback ? callback(object, nil) : nil;
-                    [self setHttpCache:responseObject url:url parameters:parameters];
                 }];
             }
         }];
