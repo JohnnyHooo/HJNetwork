@@ -309,8 +309,8 @@ static YYCache *_dataCache;
     }else if (cachePolicy == HJCachePolicyNetworkOnly){
         //先从网络获取数据，同时会在本地缓存数据
         [self httpWithMethod:method url:url parameters:parameters callback:^(id responseObject, NSError *error) {
-            [self setHttpCache:responseObject url:url parameters:parameters];
             callback ? callback(responseObject, error) : nil;
+            [self setHttpCache:responseObject url:url parameters:parameters];
         }];
         
     }else if (cachePolicy == HJCachePolicyCacheElseNetwork){
@@ -332,6 +332,7 @@ static YYCache *_dataCache;
             }else{
                 [self httpCacheForURL:url parameters:parameters withBlock:^(id<NSCoding> object) {
                     callback ? callback(object, nil) : nil;
+                    [self setHttpCache:responseObject url:url parameters:parameters];
                 }];
             }
         }];
@@ -340,8 +341,8 @@ static YYCache *_dataCache;
         [self httpCacheForURL:url parameters:parameters withBlock:^(id<NSCoding> object) {
             callback ? callback(object, nil) : nil;
             [self httpWithMethod:method url:url parameters:parameters callback:^(id responseObject, NSError *error) {
-                [self setHttpCache:responseObject url:url parameters:parameters];
                 callback ? callback(responseObject, error) : nil;
+                [self setHttpCache:responseObject url:url parameters:parameters];
             }];
         }];
     }else{
