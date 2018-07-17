@@ -68,7 +68,7 @@ typedef NS_ENUM(NSUInteger, HJResponseSerializer) {
 };
 
 /**请求的Block*/
-typedef void(^HJHttpRequest)(id responseObject, NSError *error);
+typedef void(^HJHttpRequest)(id responseObject, BOOL isCache, NSError *error);
 
 /**下载的Block*/
 typedef void(^HJHttpDownload)(NSString *path, NSError *error);

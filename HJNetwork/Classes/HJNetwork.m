@@ -304,12 +304,12 @@ static YYCache *_dataCache;
     }else if (cachePolicy == HJCachePolicyCacheOnly){
         //只从缓存读数据，如果缓存没有数据，返回一个空。
         [self httpCacheForURL:url parameters:parameters withBlock:^(id<NSCoding> object) {
-            callback ? callback(object, nil) : nil;
+            callback ? callback(object, YES, nil) : nil;
         }];
     }else if (cachePolicy == HJCachePolicyNetworkOnly){
         //先从网络获取数据，同时会在本地缓存数据
-        [self httpWithMethod:method url:url parameters:parameters callback:^(id responseObject, NSError *error) {
-            callback ? callback(responseObject, error) : nil;
+        [self httpWithMethod:method url:url parameters:parameters callback:^(id responseObject, BOOL isCache, NSError *error) {
+            callback ? callback(responseObject, NO, error) : nil;
             [self setHttpCache:responseObject url:url parameters:parameters];
         }];
         
@@ -317,31 +317,31 @@ static YYCache *_dataCache;
         //先从缓存读取数据，如果没有再从网络获取
         [self httpCacheForURL:url parameters:parameters withBlock:^(id<NSCoding> object) {
             if (object) {
-                callback ? callback(object, nil) : nil;
+                callback ? callback(object, YES, nil) : nil;
             }else{
-                [self httpWithMethod:method url:url parameters:parameters callback:^(id responseObject, NSError *error) {
-                    callback ? callback(responseObject, error) : nil;
+                [self httpWithMethod:method url:url parameters:parameters callback:^(id responseObject, BOOL isCache, NSError *error) {
+                    callback ? callback(responseObject, NO, error) : nil;
                 }];
             }
         }];
     }else if (cachePolicy == HJCachePolicyNetworkElseCache){
         //先从网络获取数据，如果没有，此处的没有可以理解为访问网络失败，再从缓存读取
-        [self httpWithMethod:method url:url parameters:parameters callback:^(id responseObject, NSError *error) {
+        [self httpWithMethod:method url:url parameters:parameters callback:^(id responseObject, BOOL isCache, NSError *error) {
             if (responseObject && !error) {
-                callback ? callback(responseObject, error) : nil;
+                callback ? callback(responseObject, NO, error) : nil;
                 [self setHttpCache:responseObject url:url parameters:parameters];
             }else{
                 [self httpCacheForURL:url parameters:parameters withBlock:^(id<NSCoding> object) {
-                    callback ? callback(object, nil) : nil;
+                    callback ? callback(object, YES, nil) : nil;
                 }];
             }
         }];
     }else if (cachePolicy == HJCachePolicyCacheThenNetwork){
         //先从缓存读取数据，然后在本地缓存数据，无论结果如何都会再次从网络获取数据，在这种情况下，Block将产生两次调用
         [self httpCacheForURL:url parameters:parameters withBlock:^(id<NSCoding> object) {
-            callback ? callback(object, nil) : nil;
-            [self httpWithMethod:method url:url parameters:parameters callback:^(id responseObject, NSError *error) {
-                callback ? callback(responseObject, error) : nil;
+            callback ? callback(object, YES, nil) : nil;
+            [self httpWithMethod:method url:url parameters:parameters callback:^(id responseObject, BOOL isCache, NSError *error) {
+                callback ? callback(responseObject, NO, error) : nil;
                 [self setHttpCache:responseObject url:url parameters:parameters];
             }];
         }];
@@ -362,13 +362,13 @@ static YYCache *_dataCache;
             ATLog(@"请求结果 = %@",[self jsonToString:responseObject]);
         }
         [[self allSessionTask] removeObject:task];
-        callback ? callback(responseObject, nil) : nil;
+        callback ? callback(responseObject, NO, nil) : nil;
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (_logEnabled) {
             ATLog(@"错误内容 = %@",error);
         }
-        callback ? callback(nil, error) : nil;
+        callback ? callback(nil, NO, error) : nil;
         [[self allSessionTask] removeObject:task];
     }];
 }
@@ -411,12 +411,12 @@ static YYCache *_dataCache;
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         [[self allSessionTask] removeObject:task];
-        callback ? callback(responseObject, nil) : nil;
+        callback ? callback(responseObject, NO, nil) : nil;
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
         [[self allSessionTask] removeObject:task];
-        callback ? callback(nil, error) : nil;
+        callback ? callback(nil, NO, error) : nil;
     }];
     //添加最新的sessionTask到数组
     sessionTask ? [[self allSessionTask] addObject:sessionTask] : nil;
@@ -441,12 +441,12 @@ static YYCache *_dataCache;
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         [[self allSessionTask] removeObject:task];
-        callback ? callback(responseObject, nil) : nil;
+        callback ? callback(responseObject, NO, nil) : nil;
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
         [[self allSessionTask] removeObject:task];
-        callback ? callback(nil, error) : nil;
+        callback ? callback(nil, NO, error) : nil;
     }];
     //添加最新的sessionTask到数组
     sessionTask ? [[self allSessionTask] addObject:sessionTask] : nil;

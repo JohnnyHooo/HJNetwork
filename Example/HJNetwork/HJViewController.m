@@ -65,7 +65,7 @@
 - (IBAction)request:(UIButton *)sender {
     sender.enabled = NO;
     __weak __typeof(&*self)weakSelf = self;
-    [HJNetwork HTTPWithMethod:method url:_urlTextField.text parameters:nil cachePolicy:cachePolicy callback:^(id responseObject, NSError *error) {
+    [HJNetwork HTTPWithMethod:method url:_urlTextField.text parameters:nil cachePolicy:cachePolicy callback:^(id responseObject, BOOL isCache, NSError *error) {
         sender.enabled = YES;
         if (!error) {
             weakSelf.responseTextView.text = [NSString stringWithFormat:@"%@",responseObject];
