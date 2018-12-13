@@ -116,28 +116,24 @@ static YYCache *_dataCache;
 
 /*实时获取网络状态*/
 + (void)getNetworkStatusWithBlock:(HJNetworkStatus)networkStatus{
-    
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-            switch (status) {
-                case AFNetworkReachabilityStatusUnknown:
-                    networkStatus ? networkStatus(HJNetworkStatusUnknown) : nil;
-                    break;
-                case AFNetworkReachabilityStatusNotReachable:
-                    networkStatus ? networkStatus(HJNetworkStatusNotReachable) : nil;
-                    break;
-                case AFNetworkReachabilityStatusReachableViaWWAN:
-                    networkStatus ? networkStatus(HJNetworkStatusReachableWWAN) : nil;
-                    break;
-                case AFNetworkReachabilityStatusReachableViaWiFi:
-                    networkStatus ? networkStatus(HJNetworkStatusReachableWiFi) : nil;
-                    break;
-                default:
-                    break;
-            }
-        }];
-    });
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        switch (status) {
+            case AFNetworkReachabilityStatusUnknown:
+                networkStatus ? networkStatus(HJNetworkStatusUnknown) : nil;
+                break;
+            case AFNetworkReachabilityStatusNotReachable:
+                networkStatus ? networkStatus(HJNetworkStatusNotReachable) : nil;
+                break;
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+                networkStatus ? networkStatus(HJNetworkStatusReachableWWAN) : nil;
+                break;
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+                networkStatus ? networkStatus(HJNetworkStatusReachableWiFi) : nil;
+                break;
+            default:
+                break;
+        }
+    }];
 }
 
 /*判断是否有网*/
@@ -453,12 +449,12 @@ static YYCache *_dataCache;
 }
 
 #pragma mark -- 下载文件
-+(void)downloadWithURL:(NSString *)url fileDir:(NSString *)fileDir progress:(HJHttpProgress)progress callback:(HJHttpDownload)callback
++ (void)downloadWithURL:(NSString *)url fileDir:(NSString *)fileDir progress:(HJHttpProgress)progress callback:(HJHttpDownload)callback
 {
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     __block NSURLSessionDownloadTask *downloadTask = [_sessionManager downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
         if (_logEnabled) {
-            ATLog(@"下载进度:%.2f%%",100.0*downloadProgress.completedUnitCount / downloadProgress.totalUnitCount);
+//            ATLog(@"下载进度:%.2f%%",100.0*downloadProgress.completedUnitCount / downloadProgress.totalUnitCount);
         }
         
         dispatch_sync(dispatch_get_main_queue(), ^{
@@ -491,6 +487,23 @@ static YYCache *_dataCache;
     
     //添加sessionTask到数组
     downloadTask ? [[self allSessionTask] addObject:downloadTask] : nil;
+}
+
+
++ (void)downloadWithURLs:(NSArray *)urls fileDir:(NSString *)fileDir progress:(HJHttpProgress)progressBlock callback:(HJHttpDownload)callback
+{
+    
+    NSProgress *downloadProgress = [NSProgress currentProgress];
+    
+    for (int i = 0; i < urls.count; i ++) {
+        [self downloadWithURL:urls[i] fileDir:fileDir progress:^(NSProgress *progress) {
+            downloadProgress.totalUnitCount += progress.totalUnitCount;
+            downloadProgress.completedUnitCount = (i+ downloadProgress.completedUnitCount)/urls.count;
+            if (progressBlock) {
+                progressBlock(downloadProgress);
+            }
+        } callback:callback];
+    }
 }
 
 + (NSString *)getMethodStr:(HJRequestMethod)method{

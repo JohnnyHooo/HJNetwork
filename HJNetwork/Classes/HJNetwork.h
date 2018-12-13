@@ -282,6 +282,7 @@ typedef void(^HJNetworkStatus)(HJNetworkStatusType status);
                progress:(HJHttpProgress)progress
                 callback:(HJHttpDownload)callback;
 
++ (void)downloadWithURLs:(NSArray *)urls fileDir:(NSString *)fileDir progress:(HJHttpProgress)progressBlock callback:(HJHttpDownload)callback;
 
 #pragma mark -- 网络缓存
 
