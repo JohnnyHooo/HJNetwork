@@ -1,4 +1,3 @@
-
 //
 //  YYCache.h
 //  YYCache <https://github.com/ibireme/YYCache>
@@ -54,8 +53,8 @@ NS_ASSUME_NONNULL_BEGIN
  Multiple instances with the same name will make the cache unstable.
  
  @param name  The name of the cache. It will create a dictionary with the name in
- the app's caches dictionary for disk cache. Once initialized you should not
- read and write to this directory.
+     the app's caches dictionary for disk cache. Once initialized you should not 
+     read and write to this directory.
  @result A new cache object, or nil if an error occurs.
  */
 - (nullable instancetype)initWithName:(NSString *)name;
@@ -65,7 +64,7 @@ NS_ASSUME_NONNULL_BEGIN
  Multiple instances with the same name will make the cache unstable.
  
  @param path  Full path of a directory in which the cache will write data.
- Once initialized you should not read and write to this directory.
+     Once initialized you should not read and write to this directory.
  @result A new cache object, or nil if an error occurs.
  */
 - (nullable instancetype)initWithPath:(NSString *)path NS_DESIGNATED_INITIALIZER;
@@ -76,8 +75,8 @@ NS_ASSUME_NONNULL_BEGIN
  Multiple instances with the same name will make the cache unstable.
  
  @param name  The name of the cache. It will create a dictionary with the name in
- the app's caches dictionary for disk cache. Once initialized you should not
- read and write to this directory.
+     the app's caches dictionary for disk cache. Once initialized you should not 
+     read and write to this directory.
  @result A new cache object, or nil if an error occurs.
  */
 + (nullable instancetype)cacheWithName:(NSString *)name;
@@ -88,7 +87,7 @@ NS_ASSUME_NONNULL_BEGIN
  Multiple instances with the same name will make the cache unstable.
  
  @param path  Full path of a directory in which the cache will write data.
- Once initialized you should not read and write to this directory.
+     Once initialized you should not read and write to this directory.
  @result A new cache object, or nil if an error occurs.
  */
 + (nullable instancetype)cacheWithPath:(NSString *)path;

@@ -37,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D22C45B21C3439200361E71 /* HJNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HJNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EE21C0B95A41D9AA7FB0FD2 /* Pods-HJNetwork_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HJNetwork_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-HJNetwork_Example/Pods-HJNetwork_Example.release.xcconfig"; sourceTree = "<group>"; };
 		27244351576B6C36106FC795 /* Pods_HJNetwork_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HJNetwork_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4E8EF618F1575A2B8BBCD4 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -122,6 +123,7 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0D22C45B21C3439200361E71 /* HJNetwork.framework */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
@@ -251,7 +253,7 @@
 				ORGANIZATIONNAME = Johnny;
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = X5ZHV8479F;
+						DevelopmentTeam = 5F5F5TPDPM;
 					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
@@ -502,9 +504,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
-				DEVELOPMENT_TEAM = X5ZHV8479F;
+				DEVELOPMENT_TEAM = 5F5F5TPDPM;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HJNetwork/HJNetwork-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public/HJNetwork\"",
+				);
 				INFOPLIST_FILE = "HJNetwork/HJNetwork-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
@@ -519,9 +525,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
-				DEVELOPMENT_TEAM = X5ZHV8479F;
+				DEVELOPMENT_TEAM = 5F5F5TPDPM;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HJNetwork/HJNetwork-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public/HJNetwork\"",
+				);
 				INFOPLIST_FILE = "HJNetwork/HJNetwork-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";

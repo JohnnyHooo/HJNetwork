@@ -273,7 +273,7 @@ typedef void(^HJNetworkStatus)(HJNetworkStatusType status);
  下载文件
 
  @param url 请求地址
- @param fileDir 文件存储的目录(默认存储目录为Download)
+ @param fileDir 文件存储的目录(默认存储目录为HJDownloader，当未创建文件夹的话会自动创建)
  @param progress 文件下载的进度信息
  @param callback 请求回调
  */
@@ -281,8 +281,6 @@ typedef void(^HJNetworkStatus)(HJNetworkStatusType status);
                 fileDir:(NSString *)fileDir
                progress:(HJHttpProgress)progress
                 callback:(HJHttpDownload)callback;
-
-+ (void)downloadWithURLs:(NSArray *)urls fileDir:(NSString *)fileDir progress:(HJHttpProgress)progressBlock callback:(HJHttpDownload)callback;
 
 #pragma mark -- 网络缓存
 

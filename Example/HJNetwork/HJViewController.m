@@ -27,7 +27,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"---->%@",NSHomeDirectory());
     //DEMO 默认GET请求
     method = HJRequestMethodGET;
     
@@ -48,60 +47,23 @@
     
     //演示请求
     [self request:_requestBtn];
-//    [HJNetwork downloadWithURL:@"http://sw.bos.baidu.com/sw-search-sp/software/de4fe04c2280e/SogouInput_mac_4.0.0.3127.dmg" fileDir:[self createDefaultPath] progress:^(NSProgress *progress) {
-//        NSLog(@"--->%lld",progress.completedUnitCount);
-//    } callback:^(NSString *path, NSError *error) {
-//        NSLog(@"--->%@",path);
-//    }];
     
-    [self downloadWithURLs:@[@"http://sw.bos.baidu.com/sw-search-sp/software/de4fe04c2280e/SogouInput_mac_4.0.0.3127.dmg",@"https://dldir1.qq.com/qqfile/QQforMac/QQ_V6.5.2.dmg",@"https://dldir1.qq.com/music/clntupate/mac/QQMusicMac_Mgr.dmg",@"https://dldir1.qq.com/invc/tt/QQBrowser_for_Mac.dmg",@"https://dldir1.qq.com/weixin/mac/WeChat_2.3.17.18.dmg"] fileDir:[self createDefaultPath] progress:^(NSProgress *progress) {
-
+    
+    
+    //@[@"http://sw.bos.baidu.com/sw-search-sp/software/de4fe04c2280e/SogouInput_mac_4.0.0.3127.dmg",@"https://dldir1.qq.com/qqfile/QQforMac/QQ_V6.5.2.dmg",@"https://dldir1.qq.com/music/clntupate/mac/QQMusicMac_Mgr.dmg",@"https://dldir1.qq.com/invc/tt/QQBrowser_for_Mac.dmg",@"https://dldir1.qq.com/weixin/mac/WeChat_2.3.17.18.dmg"]
+    //下载测试
+    [HJNetwork downloadWithURL:@"https://dldir1.qq.com/music/clntupate/mac/QQMusicMac_Mgr.dmg" fileDir:nil progress:^(NSProgress *progress) {
+        NSLog(@"下载进度:%.2f%%",100.0*progress.completedUnitCount / progress.totalUnitCount);
     } callback:^(NSString *path, NSError *error) {
-
+        NSLog(@"--->%@",path);
     }];
-    
+
 }
 
-- (void)downloadWithURLs:(NSArray *)urls fileDir:(NSString *)fileDir progress:(HJHttpProgress)progressBlock callback:(HJHttpDownload)callback
-{
-    
-    NSProgress *downloadProgress = [NSProgress currentProgress];
-    
-    for (int i = 0; i < urls.count; i ++) {
-        [HJNetwork downloadWithURL:urls[i] fileDir:fileDir progress:^(NSProgress *progress) {
-            downloadProgress.totalUnitCount += progress.totalUnitCount;
-            downloadProgress.completedUnitCount = ( downloadProgress.completedUnitCount)/urls.count;
-
-            NSLog(@"下载进度:%.2f%%",100.0*downloadProgress.completedUnitCount / downloadProgress.totalUnitCount);
-            
-            if (progressBlock) {
-                progressBlock(downloadProgress);
-            }
-        } callback:callback];
-    }
-}
-
-- (NSString *)createDefaultPath {
+/**下载路径*/
+- (NSString *)downloadFolder {
     NSString *documents = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    NSString *downloadFolder = [documents stringByAppendingPathComponent:@"downloader"];
-    [self handleDownloadFolder:downloadFolder];
-    return downloadFolder;
-}
-
-/**
- 处理下载文件夹
- - 确保文件夹存在
- - 为此文件夹设置备份属性，避免占用用户iCloud容量，不然会被拒的
- @param folder 文件路径
- */
-- (void)handleDownloadFolder:(NSString *)folder {
-    BOOL isDir = NO;
-    BOOL folderExist = [[NSFileManager defaultManager] fileExistsAtPath:folder isDirectory:&isDir];
-    if (!folderExist || !isDir ) {
-        [[NSFileManager defaultManager] createDirectoryAtPath:folder withIntermediateDirectories:YES attributes:nil error:nil];
-        NSURL *fileURL = [NSURL fileURLWithPath:folder];
-        [fileURL setResourceValue:@YES forKey:NSURLIsExcludedFromBackupKey error:nil];
-    }
+    return [documents stringByAppendingPathComponent:@"HJDownloader"];
 }
 
 
@@ -118,6 +80,8 @@
 
 /**请求*/
 - (IBAction)request:(UIButton *)sender {
+    self.responseTextView.text = @"请求中...";
+
     sender.enabled = NO;
     __weak __typeof(&*self)weakSelf = self;
     [HJNetwork HTTPWithMethod:method url:_urlTextField.text parameters:nil cachePolicy:cachePolicy callback:^(id responseObject, BOOL isCache, NSError *error) {
