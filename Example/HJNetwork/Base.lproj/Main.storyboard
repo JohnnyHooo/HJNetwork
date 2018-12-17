@@ -21,26 +21,34 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6EQ-xR-7Pi">
                                 <rect key="frame" x="10" y="74" width="355" height="583"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="网络获取中..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVJ-yP-bwU">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://api.travels.app887.com/api/Articles.action" borderStyle="roundedRect" placeholder="请输入URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iZB-Qq-eWm">
-                                        <rect key="frame" x="0.0" y="28" width="355" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="30"/>
+                                        <color key="tintColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="URL" keyboardAppearance="alert" returnKeyType="go" enablesReturnKeyAutomatically="YES" smartDashesType="yes" smartQuotesType="yes" textContentType="url"/>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AFV-4s-90s">
-                                        <rect key="frame" x="0.0" y="68" width="355" height="372"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <rect key="frame" x="0.0" y="40" width="355" height="328"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="只从网络获取数据，且数据不会缓存在本地" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJK-Hx-qgV">
+                                        <rect key="frame" x="0.0" y="378" width="355" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6jE-nA-WkI">
-                                        <rect key="frame" x="0.0" y="450" width="355" height="29"/>
+                                        <rect key="frame" x="0.0" y="405" width="355" height="29"/>
+                                        <color key="backgroundColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <segments>
                                             <segment title="GET"/>
                                             <segment title="POST"/>
@@ -49,12 +57,14 @@
                                             <segment title="PATCH"/>
                                             <segment title="DELETE"/>
                                         </segments>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="changeMethod:" destination="whP-gf-Uak" eventType="valueChanged" id="D6x-Ss-4No"/>
                                         </connections>
                                     </segmentedControl>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xDa-JG-vug">
-                                        <rect key="frame" x="0.0" y="488" width="355" height="29"/>
+                                        <rect key="frame" x="0.0" y="443" width="355" height="29"/>
+                                        <color key="backgroundColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <segments>
                                             <segment title="缓存0"/>
                                             <segment title="缓存1"/>
@@ -63,61 +73,76 @@
                                             <segment title="缓存4"/>
                                             <segment title="缓存5"/>
                                         </segments>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="changeCachePolicy:" destination="whP-gf-Uak" eventType="valueChanged" id="X9a-bz-jvO"/>
                                         </connections>
                                     </segmentedControl>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="只从网络获取数据，且数据不会缓存在本地" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SJK-Hx-qgV">
-                                        <rect key="frame" x="0.0" y="526" width="355" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jsT-f8-vfz">
-                                        <rect key="frame" x="0.0" y="553" width="355" height="30"/>
+                                        <rect key="frame" x="0.0" y="481" width="355" height="102"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egZ-RA-Agw">
-                                                <rect key="frame" x="0.0" y="0.0" width="81.5" height="30"/>
-                                                <color key="backgroundColor" red="0.0" green="0.59215686274509804" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <rect key="frame" x="0.0" y="36" width="81.5" height="30"/>
+                                                <color key="backgroundColor" red="0.25490196079999999" green="0.25490196079999999" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                <state key="normal" title="请求">
+                                                <state key="normal" title="请求数据">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <state key="disabled" title="请求中..."/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="request:" destination="whP-gf-Uak" eventType="touchUpInside" id="3uU-IH-GA1"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dH-8P-qPj">
-                                                <rect key="frame" x="91.5" y="0.0" width="81" height="30"/>
-                                                <color key="backgroundColor" red="0.0" green="0.59215686274509804" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <rect key="frame" x="91.5" y="36" width="81" height="30"/>
+                                                <color key="backgroundColor" red="0.25490196079999999" green="0.25490196079999999" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                <state key="normal" title="取消">
+                                                <state key="normal" title="取消请求">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="cancelRequest:" destination="whP-gf-Uak" eventType="touchUpInside" id="E8Y-mP-Xwc"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cft-8e-tAi">
-                                                <rect key="frame" x="182.5" y="0.0" width="81.5" height="30"/>
-                                                <color key="backgroundColor" red="0.0" green="0.59215686270000001" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <rect key="frame" x="182.5" y="36" width="81.5" height="30"/>
+                                                <color key="backgroundColor" red="0.25490196079999999" green="0.25490196079999999" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                <state key="normal" title="清空">
+                                                <state key="normal" title="清空内容">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="empty:" destination="whP-gf-Uak" eventType="touchUpInside" id="9rX-17-W9t"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1C-SI-p29">
-                                                <rect key="frame" x="274" y="0.0" width="81" height="30"/>
-                                                <color key="backgroundColor" red="0.0" green="0.59215686274509804" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <rect key="frame" x="274" y="36" width="81" height="30"/>
+                                                <color key="backgroundColor" red="0.25490196079999999" green="0.25490196079999999" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                 <state key="normal" title="清除缓存">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <state key="disabled" title="清除缓存中..."/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="clearRequest:" destination="whP-gf-Uak" eventType="touchUpInside" id="yP1-KI-OXA"/>
                                                 </connections>
@@ -127,7 +152,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="UFg-7Q-uQE" firstAttribute="bottom" secondItem="6EQ-xR-7Pi" secondAttribute="bottom" constant="10" id="3hN-nK-hv9"/>
                             <constraint firstItem="UFg-7Q-uQE" firstAttribute="trailing" secondItem="6EQ-xR-7Pi" secondAttribute="trailing" constant="10" id="LY8-Qb-EDM"/>
@@ -137,11 +162,11 @@
                         <viewLayoutGuide key="safeArea" id="UFg-7Q-uQE"/>
                     </view>
                     <navigationItem key="navigationItem" title="HJNetwork" id="taW-qy-edU"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <connections>
                         <outlet property="cacheLabel" destination="SJK-Hx-qgV" id="2XG-3J-2gC"/>
                         <outlet property="requestBtn" destination="egZ-RA-Agw" id="BrG-cV-ZuJ"/>
                         <outlet property="responseTextView" destination="AFV-4s-90s" id="hwK-CT-Ipo"/>
-                        <outlet property="stateLabel" destination="mVJ-yP-bwU" id="Kfy-L8-ZLE"/>
                         <outlet property="urlTextField" destination="iZB-Qq-eWm" id="eov-Lj-UYm"/>
                     </connections>
                 </viewController>
@@ -154,11 +179,14 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oWx-Tq-p5W" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zR5-hU-H01">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="blackTranslucent" id="zR5-hU-H01">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uFr-gG-MJF">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="whP-gf-Uak" kind="relationship" relationship="rootViewController" id="6I0-Vl-3t5"/>
                     </connections>

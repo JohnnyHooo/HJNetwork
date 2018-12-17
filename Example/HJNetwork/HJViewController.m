@@ -12,7 +12,6 @@
 @interface HJViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *urlTextField;
 @property (weak, nonatomic) IBOutlet UITextView *responseTextView;
-@property (weak, nonatomic) IBOutlet UILabel *stateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *cacheLabel;
 @property (weak, nonatomic) IBOutlet UIButton *requestBtn;
 
@@ -42,7 +41,7 @@
     //网络状态
     __weak __typeof(&*self)weakSelf = self;
     [HJNetwork getNetworkStatusWithBlock:^(HJNetworkStatusType status) {
-        weakSelf.stateLabel.text = [NSString stringWithFormat:@"当前网络:%@",[weakSelf getStateStr:status]];
+        weakSelf.navigationItem.prompt = [NSString stringWithFormat:@"当前网络:%@",[weakSelf getStateStr:status]];
     }];
     
     //演示请求
