@@ -20,7 +20,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../HJNetwork/Classes/HJNetwork.m"
-            timestampString = "566735290.2994649"
+            timestampString = "566735572.924365"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "568"
@@ -36,12 +36,12 @@
                   moduleName = "HJNetwork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/JohnnyHoo/%E4%BB%A3%E7%A0%81/HJNetwork/HJNetwork/Classes/HJNetwork.m"
-                  timestampString = "566735353.872421"
+                  timestampString = "566735573.563934"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "568"
                   endingLineNumber = "568"
-                  offsetFromSymbolStart = "188">
+                  offsetFromSymbolStart = "166">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -51,12 +51,12 @@
                   moduleName = "HJNetwork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/JohnnyHoo/%E4%BB%A3%E7%A0%81/HJNetwork/HJNetwork/Classes/HJNetwork.m"
-                  timestampString = "566735353.8746229"
+                  timestampString = "566735573.5658979"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "568"
                   endingLineNumber = "568"
-                  offsetFromSymbolStart = "24">
+                  offsetFromSymbolStart = "19">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -66,12 +66,12 @@
                   moduleName = "HJNetwork"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/JohnnyHoo/%E4%BB%A3%E7%A0%81/HJNetwork/HJNetwork/Classes/HJNetwork.m"
-                  timestampString = "566735353.8766789"
+                  timestampString = "566735573.5677429"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "568"
                   endingLineNumber = "568"
-                  offsetFromSymbolStart = "20">
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
