@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HJNetwork'
-  s.version          = '1.2.0'
+  s.version          = '1.2.1'
   s.summary          = 'A short description of HJNetwork.'
 
 # This description is used to generate tags and improve search results.

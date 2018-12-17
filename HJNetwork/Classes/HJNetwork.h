@@ -101,6 +101,9 @@ typedef void(^HJNetworkStatus)(HJNetworkStatusType status);
 /** 设置接口请求头 */
 + (void)setHeadr:(NSDictionary *)heder;
 
+/**设置请求超时时间(默认30s) */
++ (void)setRequestTimeoutInterval:(NSTimeInterval)time;
+
 /**设置接口基本参数(如:用户ID, Token)*/
 + (void)setBaseParameters:(NSDictionary *)parameters;
 
@@ -122,8 +125,8 @@ typedef void(^HJNetworkStatus)(HJNetworkStatusType status);
 /**取消指定URL的Http请求*/
 + (void)cancelRequestWithURL:(NSString *)url;
 
-/**设置请求超时时间(默认30s) */
-+ (void)setRequestTimeoutInterval:(NSTimeInterval)time;
+/** 清空接口请求头 */
++ (void)clearAuthorizationHeader;
 
 /**是否打开网络加载菊花(默认打开)*/
 + (void)openNetworkActivityIndicator:(BOOL)open;
