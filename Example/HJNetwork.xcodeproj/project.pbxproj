@@ -512,6 +512,7 @@
 					"\"${PODS_ROOT}/Headers/Public/HJNetwork\"",
 				);
 				INFOPLIST_FILE = "HJNetwork/HJNetwork-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -533,6 +534,7 @@
 					"\"${PODS_ROOT}/Headers/Public/HJNetwork\"",
 				);
 				INFOPLIST_FILE = "HJNetwork/HJNetwork-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";

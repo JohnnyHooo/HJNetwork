@@ -13,5 +13,68 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../HJNetwork/Classes/HJNetwork.m"
+            timestampString = "566731343.048485"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "568"
+            endingLineNumber = "568"
+            landmarkName = "+httpCacheForURL:parameters:withBlock:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[HJNetwork httpCacheForURL:parameters:withBlock:]"
+                  moduleName = "HJNetwork"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/JohnnyHoo/%E4%BB%A3%E7%A0%81/HJNetwork/HJNetwork/Classes/HJNetwork.m"
+                  timestampString = "566731343.282179"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "568"
+                  endingLineNumber = "568"
+                  offsetFromSymbolStart = "188">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__50+[HJNetwork httpCacheForURL:parameters:withBlock:]_block_invoke"
+                  moduleName = "HJNetwork"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/JohnnyHoo/%E4%BB%A3%E7%A0%81/HJNetwork/HJNetwork/Classes/HJNetwork.m"
+                  timestampString = "566731343.284655"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "568"
+                  endingLineNumber = "568"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.365"
+                  moduleName = "HJNetwork"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/JohnnyHoo/%E4%BB%A3%E7%A0%81/HJNetwork/HJNetwork/Classes/HJNetwork.m"
+                  timestampString = "566731343.2873141"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "568"
+                  endingLineNumber = "568"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

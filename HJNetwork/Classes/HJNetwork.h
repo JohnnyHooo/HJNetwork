@@ -354,8 +354,6 @@ typedef void(^HJNetworkStatus)(HJNetworkStatusType status);
  */
 + (void)setRequestSerializer:(HJRequestSerializer)requestSerializer;
 
-
-
 /**
  设置服务器响应数据格式:默认为JSON格式
 

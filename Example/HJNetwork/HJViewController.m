@@ -109,9 +109,16 @@
 /**清除缓存*/
 - (IBAction)clearRequest:(UIButton *)sender {
     sender.enabled = NO;
+    __weak __typeof(&*self)weakSelf = self;
     [HJNetwork removeAllHttpCacheBlock:nil endBlock:^(BOOL error) {
         //通知主线程刷新
         dispatch_async(dispatch_get_main_queue(), ^{
+            if (error) {
+                weakSelf.responseTextView.text = @"清除缓存错误";
+                NSLog(@"---->%@",@"清除缓存错误");
+            }else{
+                weakSelf.responseTextView.text = @"清除缓存成功";
+            }
             sender.enabled = YES;
         });
     }];

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oWx-Tq-p5W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oWx-Tq-p5W">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,31 +14,33 @@
         <scene sceneID="wQg-tq-qST">
             <objects>
                 <viewController id="whP-gf-Uak" customClass="HJViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="uEw-UM-LJ8"/>
-                        <viewControllerLayoutGuide type="bottom" id="Mvr-aV-6Um"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="网络获取中..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVJ-yP-bwU">
-                                <rect key="frame" x="142" y="74" width="91" height="18"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6EQ-xR-7Pi">
-                                <rect key="frame" x="10" y="484" width="355" height="173"/>
+                                <rect key="frame" x="10" y="74" width="355" height="583"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://api.travels.app887.com/api/Articles.action" borderStyle="roundedRect" placeholder="请输入URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iZB-Qq-eWm">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="网络获取中..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVJ-yP-bwU">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://api.travels.app887.com/api/Articles.action" borderStyle="roundedRect" placeholder="请输入URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iZB-Qq-eWm">
+                                        <rect key="frame" x="0.0" y="28" width="355" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="URL" keyboardAppearance="alert" returnKeyType="go" enablesReturnKeyAutomatically="YES" smartDashesType="yes" smartQuotesType="yes" textContentType="url"/>
                                     </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AFV-4s-90s">
+                                        <rect key="frame" x="0.0" y="68" width="355" height="372"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
+                                    </textView>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6jE-nA-WkI">
-                                        <rect key="frame" x="0.0" y="40" width="355" height="29"/>
+                                        <rect key="frame" x="0.0" y="450" width="355" height="29"/>
                                         <segments>
                                             <segment title="GET"/>
                                             <segment title="POST"/>
@@ -51,7 +54,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xDa-JG-vug">
-                                        <rect key="frame" x="0.0" y="78" width="355" height="29"/>
+                                        <rect key="frame" x="0.0" y="488" width="355" height="29"/>
                                         <segments>
                                             <segment title="缓存0"/>
                                             <segment title="缓存1"/>
@@ -65,13 +68,13 @@
                                         </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="只从网络获取数据，且数据不会缓存在本地" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SJK-Hx-qgV">
-                                        <rect key="frame" x="0.0" y="116" width="355" height="17"/>
+                                        <rect key="frame" x="0.0" y="526" width="355" height="17"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jsT-f8-vfz">
-                                        <rect key="frame" x="0.0" y="143" width="355" height="30"/>
+                                        <rect key="frame" x="0.0" y="553" width="355" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egZ-RA-Agw">
                                                 <rect key="frame" x="0.0" y="0.0" width="81.5" height="30"/>
@@ -123,25 +126,15 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AFV-4s-90s">
-                                <rect key="frame" x="10" y="102" width="355" height="372"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="6EQ-xR-7Pi" secondAttribute="bottom" constant="10" id="3hN-nK-hv9"/>
-                            <constraint firstItem="mVJ-yP-bwU" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" constant="10" id="3uG-qe-8lj"/>
-                            <constraint firstItem="mVJ-yP-bwU" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="Cmh-SP-YT5"/>
-                            <constraint firstAttribute="trailing" secondItem="6EQ-xR-7Pi" secondAttribute="trailing" constant="10" id="LY8-Qb-EDM"/>
-                            <constraint firstItem="6EQ-xR-7Pi" firstAttribute="top" secondItem="AFV-4s-90s" secondAttribute="bottom" constant="10" id="XKW-ST-YYb"/>
-                            <constraint firstAttribute="trailing" secondItem="AFV-4s-90s" secondAttribute="trailing" constant="10" id="Xye-h1-f3V"/>
-                            <constraint firstItem="AFV-4s-90s" firstAttribute="top" secondItem="mVJ-yP-bwU" secondAttribute="bottom" constant="10" id="Y6p-RH-TFi"/>
-                            <constraint firstItem="AFV-4s-90s" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" constant="10" id="Yv8-L3-yMI"/>
-                            <constraint firstItem="6EQ-xR-7Pi" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" constant="10" id="pF6-ac-zXv"/>
+                            <constraint firstItem="UFg-7Q-uQE" firstAttribute="bottom" secondItem="6EQ-xR-7Pi" secondAttribute="bottom" constant="10" id="3hN-nK-hv9"/>
+                            <constraint firstItem="UFg-7Q-uQE" firstAttribute="trailing" secondItem="6EQ-xR-7Pi" secondAttribute="trailing" constant="10" id="LY8-Qb-EDM"/>
+                            <constraint firstItem="6EQ-xR-7Pi" firstAttribute="top" secondItem="UFg-7Q-uQE" secondAttribute="top" constant="10" id="Ove-wV-RLM"/>
+                            <constraint firstItem="6EQ-xR-7Pi" firstAttribute="leading" secondItem="UFg-7Q-uQE" secondAttribute="leading" constant="10" id="pF6-ac-zXv"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="UFg-7Q-uQE"/>
                     </view>
                     <navigationItem key="navigationItem" title="HJNetwork" id="taW-qy-edU"/>
                     <connections>
