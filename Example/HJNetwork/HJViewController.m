@@ -31,8 +31,8 @@
     
     //开启控制台log
     [HJNetwork setLogEnabled:YES];
-//    [HJNetwork setBaseURL:@"https://atime.com/app/v1/"];
-//    [HJNetwork setFiltrationCacheKey:@[@"time",@"ts"]];
+    //    [HJNetwork setBaseURL:@"https://atime.com/app/v1/"];
+    //    [HJNetwork setFiltrationCacheKey:@[@"time",@"ts"]];
     [HJNetwork setRequestTimeoutInterval:60.0f];
     
     //按App版本号缓存网络请求内容 可修改版本号查看效果 或 使用自定义版本号方法
@@ -56,7 +56,7 @@
     } callback:^(NSString *path, NSError *error) {
         NSLog(@"--->%@",path);
     }];
-
+    
 }
 
 /**下载路径*/
@@ -80,7 +80,7 @@
 /**请求*/
 - (IBAction)request:(UIButton *)sender {
     self.responseTextView.text = @"请求中...";
-
+    
     sender.enabled = NO;
     __weak __typeof(&*self)weakSelf = self;
     [HJNetwork HTTPWithMethod:method url:_urlTextField.text parameters:nil cachePolicy:cachePolicy callback:^(id responseObject, BOOL isCache, NSError *error) {

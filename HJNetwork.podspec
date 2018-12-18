@@ -7,9 +7,9 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'HJNetwork'
-  s.version          = '1.2.3'
-  s.summary          = 'A short description of HJNetwork.'
+s.name             = 'HJNetwork'
+s.version          = '1.2.3'
+s.summary          = 'A short description of HJNetwork.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,30 +17,30 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = <<-DESC
+s.description      = <<-DESC
 HJNetwork对AFHTTPSessionManager进行二次封装，包括网络请求，文件上传，文件下载这三个方法。并且支持RESTful API GET，POST，HEAD，PUT，DELETE，PATCH的请求。同时使用YYCache做了强大的缓存策略。
-                       DESC
+DESC
 
-  s.homepage         = 'https://github.com/JohnnyHooo/HJNetwork'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Johnny' => 'hujin123@vip.qq.com' }
-  s.source           = { :git => 'https://github.com/JohnnyHooo/HJNetwork.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+s.homepage         = 'https://github.com/JohnnyHooo/HJNetwork'
+# s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+s.license          = { :type => 'MIT', :file => 'LICENSE' }
+s.author           = { 'Johnny' => 'hujin123@vip.qq.com' }
+s.source           = { :git => 'https://github.com/JohnnyHooo/HJNetwork.git', :tag => s.version.to_s }
+# s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+s.ios.deployment_target = '8.0'
 
-  s.source_files = 'HJNetwork/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'HJNetwork' => ['HJNetwork/Assets/*.png']
-  # }
+s.source_files = 'HJNetwork/Classes/**/*'
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'AFNetworking'
-  s.dependency 'YYCache'
+# s.resource_bundles = {
+#   'HJNetwork' => ['HJNetwork/Assets/*.png']
+# }
 
-  
-  
+# s.public_header_files = 'Pod/Classes/**/*.h'
+# s.frameworks = 'UIKit', 'MapKit'
+s.dependency 'AFNetworking'
+s.dependency 'YYCache'
+
+
+
 end

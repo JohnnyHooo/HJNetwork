@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18A5440CF53572569B48B4C0 /* Pods_HJNetwork_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A009585929C437019A48BF2B /* Pods_HJNetwork_Example.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -23,7 +22,8 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		CEF658FB2729965D0E1C228F /* Pods_HJNetwork_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27244351576B6C36106FC795 /* Pods_HJNetwork_Tests.framework */; };
+		C6437D3CAF0ED40071AD22B4 /* Pods_HJNetwork_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B608721D0F660DE2C73C9AFF /* Pods_HJNetwork_Tests.framework */; };
+		CE0B2671A93B6F263938621B /* Pods_HJNetwork_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262F649C3FBE552EBAC630DB /* Pods_HJNetwork_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,12 +37,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0D22C45B21C3439200361E71 /* HJNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HJNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1EE21C0B95A41D9AA7FB0FD2 /* Pods-HJNetwork_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HJNetwork_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-HJNetwork_Example/Pods-HJNetwork_Example.release.xcconfig"; sourceTree = "<group>"; };
-		27244351576B6C36106FC795 /* Pods_HJNetwork_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HJNetwork_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B4E8EF618F1575A2B8BBCD4 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		404DA5B02F2E1C0245288F2C /* Pods-HJNetwork_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HJNetwork_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HJNetwork_Tests/Pods-HJNetwork_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		55E5E77EF9739C81C79A1E71 /* HJNetwork.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HJNetwork.podspec; path = ../HJNetwork.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		0DC8E64621C88B6500F9BCE4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		0DC8E64721C88B6500F9BCE4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		0DC8E64821C88B6700F9BCE4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		0DC8E64921C88B6800F9BCE4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		0DC8E64A21C88B6800F9BCE4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		0DC8E64B21C88B6800F9BCE4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		0E0B5DA99093FF2015227969 /* HJNetwork.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HJNetwork.podspec; path = ../HJNetwork.podspec; sourceTree = "<group>"; };
+		262F649C3FBE552EBAC630DB /* Pods_HJNetwork_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HJNetwork_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A1E3B67A696BD6982421B7A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		42120FD81AF99F4E137A79A4 /* Pods-HJNetwork_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HJNetwork_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HJNetwork_Tests/Pods-HJNetwork_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* HJNetwork_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HJNetwork_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,15 +66,13 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		6C6EA23E0BDE9D41F321CC7F /* Pods-HJNetwork_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HJNetwork_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HJNetwork_Tests/Pods-HJNetwork_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		7A165D1FA6C24E6C3FF9669D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9696DB556B3EBA77F3BB043F /* Pods-HJNetwork_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HJNetwork_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HJNetwork_Example/Pods-HJNetwork_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		A009585929C437019A48BF2B /* Pods_HJNetwork_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HJNetwork_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B2E50AE52088AEA500AF7B0E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		B2E50AE62088AEA600AF7B0E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		B2E50AE72088AEA600AF7B0E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		A60E3ADB3EDFC33F169DD48C /* Pods-HJNetwork_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HJNetwork_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HJNetwork_Tests/Pods-HJNetwork_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		B608721D0F660DE2C73C9AFF /* Pods_HJNetwork_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HJNetwork_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D957BAE2A5D18F09AC4F4B29 /* Pods-HJNetwork_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HJNetwork_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HJNetwork_Example/Pods-HJNetwork_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		F895336BDEACEE244741442B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		FD02221CC1C635C4A6DF8B1E /* Pods-HJNetwork_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HJNetwork_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-HJNetwork_Example/Pods-HJNetwork_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +83,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				18A5440CF53572569B48B4C0 /* Pods_HJNetwork_Example.framework in Frameworks */,
+				CE0B2671A93B6F263938621B /* Pods_HJNetwork_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,13 +94,24 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				CEF658FB2729965D0E1C228F /* Pods_HJNetwork_Tests.framework in Frameworks */,
+				C6437D3CAF0ED40071AD22B4 /* Pods_HJNetwork_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		584D1338124CE4229D4FB359 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D957BAE2A5D18F09AC4F4B29 /* Pods-HJNetwork_Example.debug.xcconfig */,
+				FD02221CC1C635C4A6DF8B1E /* Pods-HJNetwork_Example.release.xcconfig */,
+				A60E3ADB3EDFC33F169DD48C /* Pods-HJNetwork_Tests.debug.xcconfig */,
+				42120FD81AF99F4E137A79A4 /* Pods-HJNetwork_Tests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
@@ -107,7 +120,7 @@
 				6003F5B5195388D20070C39A /* Tests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
-				EF9FB89EAD5006BB4AB44260 /* Pods */,
+				584D1338124CE4229D4FB359 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,13 +136,12 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0D22C45B21C3439200361E71 /* HJNetwork.framework */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				A009585929C437019A48BF2B /* Pods_HJNetwork_Example.framework */,
-				27244351576B6C36106FC795 /* Pods_HJNetwork_Tests.framework */,
+				262F649C3FBE552EBAC630DB /* Pods_HJNetwork_Example.framework */,
+				B608721D0F660DE2C73C9AFF /* Pods_HJNetwork_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -183,22 +195,11 @@
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				55E5E77EF9739C81C79A1E71 /* HJNetwork.podspec */,
-				3B4E8EF618F1575A2B8BBCD4 /* README.md */,
-				7A165D1FA6C24E6C3FF9669D /* LICENSE */,
+				0E0B5DA99093FF2015227969 /* HJNetwork.podspec */,
+				F895336BDEACEE244741442B /* README.md */,
+				2A1E3B67A696BD6982421B7A /* LICENSE */,
 			);
 			name = "Podspec Metadata";
-			sourceTree = "<group>";
-		};
-		EF9FB89EAD5006BB4AB44260 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				9696DB556B3EBA77F3BB043F /* Pods-HJNetwork_Example.debug.xcconfig */,
-				1EE21C0B95A41D9AA7FB0FD2 /* Pods-HJNetwork_Example.release.xcconfig */,
-				6C6EA23E0BDE9D41F321CC7F /* Pods-HJNetwork_Tests.debug.xcconfig */,
-				404DA5B02F2E1C0245288F2C /* Pods-HJNetwork_Tests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,11 +209,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "HJNetwork_Example" */;
 			buildPhases = (
-				14A1631F62F2E080C40C62D4 /* [CP] Check Pods Manifest.lock */,
+				E8B575826822516840E61B67 /* [CP] Check Pods Manifest.lock */,
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				4D7C524C17F99076A8CD7148 /* [CP] Embed Pods Frameworks */,
+				6ECB26CF703C494CCDFFB7E4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -227,7 +228,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "HJNetwork_Tests" */;
 			buildPhases = (
-				4E0FBB119C2316EC6884FDBB /* [CP] Check Pods Manifest.lock */,
+				6B5DD882450E3EDAC227FB51 /* [CP] Check Pods Manifest.lock */,
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
@@ -267,6 +268,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 				"zh-Hant",
 			);
 			mainGroup = 6003F581195388D10070C39A;
@@ -303,7 +305,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		14A1631F62F2E080C40C62D4 /* [CP] Check Pods Manifest.lock */ = {
+		6B5DD882450E3EDAC227FB51 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -314,14 +316,14 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HJNetwork_Example-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-HJNetwork_Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4D7C524C17F99076A8CD7148 /* [CP] Embed Pods Frameworks */ = {
+		6ECB26CF703C494CCDFFB7E4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -343,7 +345,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HJNetwork_Example/Pods-HJNetwork_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4E0FBB119C2316EC6884FDBB /* [CP] Check Pods Manifest.lock */ = {
+		E8B575826822516840E61B67 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -354,7 +356,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HJNetwork_Tests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-HJNetwork_Example-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -397,7 +399,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				6003F597195388D20070C39A /* en */,
-				B2E50AE62088AEA600AF7B0E /* zh-Hant */,
+				0DC8E64721C88B6500F9BCE4 /* zh-Hans */,
+				0DC8E64A21C88B6800F9BCE4 /* zh-Hant */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -406,7 +409,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				6003F5B9195388D20070C39A /* en */,
-				B2E50AE72088AEA600AF7B0E /* zh-Hant */,
+				0DC8E64821C88B6700F9BCE4 /* zh-Hans */,
+				0DC8E64B21C88B6800F9BCE4 /* zh-Hant */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -415,7 +419,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				71719F9E1E33DC2100824A3D /* Base */,
-				B2E50AE52088AEA500AF7B0E /* zh-Hant */,
+				0DC8E64621C88B6500F9BCE4 /* zh-Hans */,
+				0DC8E64921C88B6800F9BCE4 /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -500,17 +505,12 @@
 		};
 		6003F5C0195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9696DB556B3EBA77F3BB043F /* Pods-HJNetwork_Example.debug.xcconfig */;
+			baseConfigurationReference = D957BAE2A5D18F09AC4F4B29 /* Pods-HJNetwork_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				DEVELOPMENT_TEAM = 5F5F5TPDPM;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HJNetwork/HJNetwork-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"${PODS_ROOT}/Headers/Public/HJNetwork\"",
-				);
 				INFOPLIST_FILE = "HJNetwork/HJNetwork-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MODULE_NAME = ExampleApp;
@@ -522,17 +522,12 @@
 		};
 		6003F5C1195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1EE21C0B95A41D9AA7FB0FD2 /* Pods-HJNetwork_Example.release.xcconfig */;
+			baseConfigurationReference = FD02221CC1C635C4A6DF8B1E /* Pods-HJNetwork_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				DEVELOPMENT_TEAM = 5F5F5TPDPM;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HJNetwork/HJNetwork-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"${PODS_ROOT}/Headers/Public/HJNetwork\"",
-				);
 				INFOPLIST_FILE = "HJNetwork/HJNetwork-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MODULE_NAME = ExampleApp;
@@ -544,7 +539,7 @@
 		};
 		6003F5C3195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C6EA23E0BDE9D41F321CC7F /* Pods-HJNetwork_Tests.debug.xcconfig */;
+			baseConfigurationReference = A60E3ADB3EDFC33F169DD48C /* Pods-HJNetwork_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -568,7 +563,7 @@
 		};
 		6003F5C4195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 404DA5B02F2E1C0245288F2C /* Pods-HJNetwork_Tests.release.xcconfig */;
+			baseConfigurationReference = 42120FD81AF99F4E137A79A4 /* Pods-HJNetwork_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
