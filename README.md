@@ -17,7 +17,7 @@ https://github.com/hongdong/HDNetwork 大家可以去提issue支持一下
 ```
 	
 <br /> 
-<img src="https://raw.githubusercontent.com/JohnnyHooo/HJNetwork/master/HJNetwork.png"  width="313" height="616"  alt="Demo效果" align=right />
+<img src="https://github.com/JohnnyHooo/HJNetwork/blob/master/HJNetwork.png?raw=true"  width="313" height="616"  alt="Demo效果" align=right />
 
 ## 特点
 - HJNetwork 对 AFHTTPSessionManager 进行二次封装。包括网络请求、文件上传、文件下载这三个方法。并且支持RESTful API GET、POST、PUT、DELETE、PATCH的请求。同时使用YYCache做了强大的缓存策略。
