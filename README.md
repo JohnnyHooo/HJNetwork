@@ -28,7 +28,7 @@ https://github.com/hongdong/HDNetwork 大家可以去提issue支持一下
 
 - 支持多种缓存策略。
 
-- 按App版本号缓存网络请求内容也可自定义版本号。
+- 按App版本号(也可自定义版本号)缓存网络请求内容。
 
 
 ## 安装
