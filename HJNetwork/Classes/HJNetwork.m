@@ -386,13 +386,15 @@ static YYCache *_dataCache;
     }else if (method == HJRequestMethodPOST) {
         sessionTask = [_sessionManager POST:url parameters:parameters progress:nil success:callback failure:failure];
     }else if (method == HJRequestMethodHEAD) {
-        sessionTask = [_sessionManager HEAD:url parameters:parameters success:nil failure:failure];
+        sessionTask = [_sessionManager HEAD:url parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task) {
+            callback ? callback(task, nil) : nil;
+        } failure:failure];
     }else if (method == HJRequestMethodPUT) {
-        sessionTask = [_sessionManager PUT:url parameters:parameters success:nil failure:failure];
+        sessionTask = [_sessionManager PUT:url parameters:parameters success:callback failure:failure];
     }else if (method == HJRequestMethodPATCH) {
-        sessionTask = [_sessionManager PATCH:url parameters:parameters success:nil failure:failure];
+        sessionTask = [_sessionManager PATCH:url parameters:parameters success:callback failure:failure];
     }else if (method == HJRequestMethodDELETE) {
-        sessionTask = [_sessionManager DELETE:url parameters:parameters success:nil failure:failure];
+        sessionTask = [_sessionManager DELETE:url parameters:parameters success:callback failure:failure];
     }
     //添加最新的sessionTask到数组
     sessionTask ? [[self allSessionTask] addObject:sessionTask] : nil;
