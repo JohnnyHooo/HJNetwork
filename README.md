@@ -1,3 +1,5 @@
+<img src="https://github.com/JohnnyHooo/HJNetwork/blob/master/logo.png?raw=true" width="100" height="100" alt="Logo" align=left />  
+
 # HJNetwork
 
 [![CI Status](http://img.shields.io/travis/Johnny/HJNetwork.svg?style=flat)](https://travis-ci.org/Johnny/HJNetwork)
