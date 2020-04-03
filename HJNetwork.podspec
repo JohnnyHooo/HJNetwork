@@ -28,7 +28,7 @@ s.author           = { 'Johnny' => 'hujin123@vip.qq.com' }
 s.source           = { :git => 'https://github.com/JohnnyHooo/HJNetwork.git', :tag => s.version.to_s }
 # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-s.ios.deployment_target = '8.0'
+s.ios.deployment_target = '10.0'
 
 s.source_files = 'HJNetwork/Classes/**/*'
 
