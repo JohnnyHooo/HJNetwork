@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "3164D51B-922F-4F29-8BE7-F9C9258060B3"
    type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
+            uuid = "B8A70391-9937-43C9-AF25-33D1BFBA20DB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -16,6 +18,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "3285788E-DC6A-4C03-9A4F-AC9D7173D932"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -23,10 +26,42 @@
             timestampString = "567599877.733097"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "570"
-            endingLineNumber = "570"
+            startingLineNumber = "640"
+            endingLineNumber = "640"
             landmarkName = "+httpCacheForURL:parameters:withBlock:"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3285788E-DC6A-4C03-9A4F-AC9D7173D932 - 704a92bd07630671"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[HJNetwork httpCacheForURL:parameters:withBlock:]"
+                  moduleName = "HJNetwork"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/JohnnyHoo/HJNetwork/HJNetwork/Classes/HJNetwork.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "640"
+                  endingLineNumber = "640"
+                  offsetFromSymbolStart = "180">
+               </Location>
+               <Location
+                  uuid = "3285788E-DC6A-4C03-9A4F-AC9D7173D932 - 92e92869221f4060"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__50+[HJNetwork httpCacheForURL:parameters:withBlock:]_block_invoke"
+                  moduleName = "HJNetwork"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/JohnnyHoo/HJNetwork/HJNetwork/Classes/HJNetwork.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "640"
+                  endingLineNumber = "640"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

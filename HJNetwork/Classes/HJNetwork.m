@@ -49,6 +49,7 @@ static YYCache *_dataCache;
     _sessionManager.requestSerializer.timeoutInterval = 30.f;
     //设置服务器返回结果的类型:JSON(AFJSONResponseSerializer,AFHTTPResponseSerializer)
     _sessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
+    _sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
     _sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", @"text/json", @"text/plain", @"text/javascript", @"text/xml", @"image/*", nil];
     //开始监测网络状态
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
@@ -226,65 +227,108 @@ static YYCache *_dataCache;
 #pragma mark -- GET请求
 + (void)GETWithURL:(NSString *)url
         parameters:(NSDictionary *)parameters
+        headers:(NSDictionary *)headers
        cachePolicy:(HJCachePolicy)cachePolicy
            callback:(HJHttpRequest)callback
 {
-    [self HTTPWithMethod:HJRequestMethodGET url:url parameters:parameters cachePolicy:cachePolicy callback:callback];
+    [self HTTPWithMethod:HJRequestMethodGET url:url parameters:parameters headers:headers cachePolicy:cachePolicy callback:callback];
 }
+///不推荐使用
++ (void)GETWithURL:(NSString *)url parameters:(NSDictionary *)parameters cachePolicy:(HJCachePolicy)cachePolicy callback:(HJHttpRequest)callback
+{
+    [self GETWithURL:url parameters:parameters headers:[_sessionManager.requestSerializer HTTPRequestHeaders] cachePolicy:cachePolicy callback:callback];
+}
+
 
 
 #pragma mark -- POST请求
 + (void)POSTWithURL:(NSString *)url
          parameters:(NSDictionary *)parameters
+         headers:(NSDictionary *)headers
         cachePolicy:(HJCachePolicy)cachePolicy
             callback:(HJHttpRequest)callback
 {
-    [self HTTPWithMethod:HJRequestMethodPOST url:url parameters:parameters cachePolicy:cachePolicy callback:callback];
+    [self HTTPWithMethod:HJRequestMethodPOST url:url parameters:parameters headers:headers cachePolicy:cachePolicy callback:callback];
 }
+///不推荐使用
++ (void)POSTWithURL:(NSString *)url parameters:(NSDictionary *)parameters cachePolicy:(HJCachePolicy)cachePolicy callback:(HJHttpRequest)callback
+{
+    [self POSTWithURL:url parameters:parameters headers:[_sessionManager.requestSerializer HTTPRequestHeaders] cachePolicy:cachePolicy callback:callback];
+}
+
 
 #pragma mark -- HEAD请求
 + (void)HEADWithURL:(NSString *)url
          parameters:(NSDictionary *)parameters
+         headers:(NSDictionary *)headers
         cachePolicy:(HJCachePolicy)cachePolicy
             callback:(HJHttpRequest)callback
 {
-    [self HTTPWithMethod:HJRequestMethodHEAD url:url parameters:parameters cachePolicy:cachePolicy callback:callback];
+    [self HTTPWithMethod:HJRequestMethodHEAD url:url parameters:parameters headers:headers cachePolicy:cachePolicy callback:callback];
 }
+///不推荐使用
++ (void)HEADWithURL:(NSString *)url parameters:(NSDictionary *)parameters cachePolicy:(HJCachePolicy)cachePolicy callback:(HJHttpRequest)callback
+{
+    [self HEADWithURL:url parameters:parameters headers:[_sessionManager.requestSerializer HTTPRequestHeaders] cachePolicy:cachePolicy callback:callback];
+}
+
 
 
 #pragma mark -- PUT请求
 + (void)PUTWithURL:(NSString *)url
         parameters:(NSDictionary *)parameters
+        headers:(NSDictionary *)headers
        cachePolicy:(HJCachePolicy)cachePolicy
            callback:(HJHttpRequest)callback
 {
-    [self HTTPWithMethod:HJRequestMethodPUT url:url parameters:parameters cachePolicy:cachePolicy callback:callback];
+    [self HTTPWithMethod:HJRequestMethodPUT url:url parameters:parameters headers:headers cachePolicy:cachePolicy callback:callback];
 }
+///不推荐使用
++ (void)PUTWithURL:(NSString *)url parameters:(NSDictionary *)parameters cachePolicy:(HJCachePolicy)cachePolicy callback:(HJHttpRequest)callback
+{
+    [self PUTWithURL:url parameters:parameters headers:[_sessionManager.requestSerializer HTTPRequestHeaders] cachePolicy:cachePolicy callback:callback];
+}
+
 
 
 #pragma mark -- PATCH请求
 + (void)PATCHWithURL:(NSString *)url
           parameters:(NSDictionary *)parameters
+          headers:(NSDictionary *)headers
          cachePolicy:(HJCachePolicy)cachePolicy
              callback:(HJHttpRequest)callback
 {
-    [self HTTPWithMethod:HJRequestMethodPATCH url:url parameters:parameters cachePolicy:cachePolicy callback:callback];
+    [self HTTPWithMethod:HJRequestMethodPATCH url:url parameters:parameters headers:headers cachePolicy:cachePolicy callback:callback];
 }
+///不推荐使用
++ (void)PATCHWithURL:(NSString *)url parameters:(NSDictionary *)parameters cachePolicy:(HJCachePolicy)cachePolicy callback:(HJHttpRequest)callback
+{
+    [self PATCHWithURL:url parameters:parameters headers:[_sessionManager.requestSerializer HTTPRequestHeaders] cachePolicy:cachePolicy callback:callback];
+}
+
 
 
 #pragma mark -- DELETE请求
 + (void)DELETEWithURL:(NSString *)url
            parameters:(NSDictionary *)parameters
+              headers:(NSDictionary *)headers
           cachePolicy:(HJCachePolicy)cachePolicy
               callback:(HJHttpRequest)callback
 {
-    [self HTTPWithMethod:HJRequestMethodDELETE url:url parameters:parameters cachePolicy:cachePolicy callback:callback];
+    [self HTTPWithMethod:HJRequestMethodDELETE url:url parameters:parameters headers:headers cachePolicy:cachePolicy callback:callback];
 }
+///不推荐使用
++ (void)DELETEWithURL:(NSString *)url parameters:(NSDictionary *)parameters cachePolicy:(HJCachePolicy)cachePolicy callback:(HJHttpRequest)callback
+{
+    [self DELETEWithURL:url parameters:parameters headers:[_sessionManager.requestSerializer HTTPRequestHeaders] cachePolicy:cachePolicy callback:callback];
+}
+
 
 
 + (void)HTTPWithMethod:(HJRequestMethod)method
                     url:(NSString *)url
              parameters:(NSDictionary *)parameters
+               headers:(NSDictionary *)headers
             cachePolicy:(HJCachePolicy)cachePolicy
                 callback:(HJHttpRequest)callback
 {
@@ -303,7 +347,7 @@ static YYCache *_dataCache;
     
     if (cachePolicy == HJCachePolicyIgnoreCache) {
         //只从网络获取数据，且数据不会缓存在本地
-        [self httpWithMethod:method url:url parameters:parameters callback:callback];
+        [self httpWithMethod:method url:url parameters:parameters headers:headers callback:callback];
     }else if (cachePolicy == HJCachePolicyCacheOnly){
         //只从缓存读数据，如果缓存没有数据，返回一个空。
         [self httpCacheForURL:url parameters:parameters withBlock:^(id<NSCoding> object) {
@@ -311,7 +355,7 @@ static YYCache *_dataCache;
         }];
     }else if (cachePolicy == HJCachePolicyNetworkOnly){
         //先从网络获取数据，同时会在本地缓存数据
-        [self httpWithMethod:method url:url parameters:parameters callback:^(id responseObject, BOOL isCache, NSError *error) {
+        [self httpWithMethod:method url:url parameters:parameters headers:headers callback:^(id responseObject, BOOL isCache, NSError *error) {
             callback ? callback(responseObject, NO, error) : nil;
             [self setHttpCache:responseObject url:url parameters:parameters];
         }];
@@ -322,14 +366,14 @@ static YYCache *_dataCache;
             if (object) {
                 callback ? callback(object, YES, nil) : nil;
             }else{
-                [self httpWithMethod:method url:url parameters:parameters callback:^(id responseObject, BOOL isCache, NSError *error) {
+                [self httpWithMethod:method url:url parameters:parameters headers:headers callback:^(id responseObject, BOOL isCache, NSError *error) {
                     callback ? callback(responseObject, NO, error) : nil;
                 }];
             }
         }];
     }else if (cachePolicy == HJCachePolicyNetworkElseCache){
         //先从网络获取数据，如果没有，此处的没有可以理解为访问网络失败，再从缓存读取
-        [self httpWithMethod:method url:url parameters:parameters callback:^(id responseObject, BOOL isCache, NSError *error) {
+        [self httpWithMethod:method url:url parameters:parameters headers:headers callback:^(id responseObject, BOOL isCache, NSError *error) {
             if (responseObject && !error) {
                 callback ? callback(responseObject, NO, error) : nil;
                 [self setHttpCache:responseObject url:url parameters:parameters];
@@ -343,7 +387,7 @@ static YYCache *_dataCache;
         //先从缓存读取数据，然后在本地缓存数据，无论结果如何都会再次从网络获取数据，在这种情况下，Block将产生两次调用
         [self httpCacheForURL:url parameters:parameters withBlock:^(id<NSCoding> object) {
             callback ? callback(object, YES, nil) : nil;
-            [self httpWithMethod:method url:url parameters:parameters callback:^(id responseObject, BOOL isCache, NSError *error) {
+            [self httpWithMethod:method url:url parameters:parameters headers:headers callback:^(id responseObject, BOOL isCache, NSError *error) {
                 callback ? callback(responseObject, NO, error) : nil;
                 [self setHttpCache:responseObject url:url parameters:parameters];
             }];
@@ -351,16 +395,23 @@ static YYCache *_dataCache;
     }else{
         //缓存策略错误，将采取 HJCachePolicyIgnoreCache 策略
         ATLog(@"缓存策略错误");
-        [self httpWithMethod:method url:url parameters:parameters callback:callback];
+        [self httpWithMethod:method url:url parameters:parameters headers:headers callback:callback];
     }
-    
+}
++ (void)HTTPWithMethod:(HJRequestMethod)method url:(NSString *)url parameters:(NSDictionary *)parameters cachePolicy:(HJCachePolicy)cachePolicy callback:(HJHttpRequest)callback kDEPRECATED_MSG_ATTRIBUTE("推荐使用带headers的方法");
+{
+    [self HTTPWithMethod:method url:url parameters:parameters headers:[_sessionManager.requestSerializer HTTPRequestHeaders] cachePolicy:cachePolicy callback:callback];
 }
 
 
 #pragma mark -- 网络请求处理
-+(void)httpWithMethod:(HJRequestMethod)method url:(NSString *)url parameters:(NSDictionary *)parameters callback:(HJHttpRequest)callback{
-    
-    [self dataTaskWithHTTPMethod:method url:url parameters:parameters callback:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
++(void)httpWithMethod:(HJRequestMethod)method
+                  url:(NSString *)url
+           parameters:(NSDictionary *)parameters
+              headers:(NSDictionary *)headers
+             callback:(HJHttpRequest)callback
+{
+    [self dataTaskWithHTTPMethod:method url:url parameters:parameters headers:headers callback:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
         if (_logEnabled) {
             ATLog(@"请求结果 = %@",[self jsonToString:responseObject]);
         }
@@ -376,25 +427,28 @@ static YYCache *_dataCache;
     }];
 }
 
-+(void)dataTaskWithHTTPMethod:(HJRequestMethod)method url:(NSString *)url parameters:(NSDictionary *)parameters
-                      callback:(void (^)(NSURLSessionDataTask * _Nonnull, id _Nullable))callback
++(void)dataTaskWithHTTPMethod:(HJRequestMethod)method
+                          url:(NSString *)url
+                   parameters:(NSDictionary *)parameters
+                      headers:(NSDictionary *)headers
+                     callback:(void (^)(NSURLSessionDataTask * _Nonnull, id _Nullable))callback
                       failure:(void (^)(NSURLSessionDataTask * _Nullable, NSError * _Nonnull))failure
 {
     NSURLSessionTask *sessionTask;
     if (method == HJRequestMethodGET){
-        sessionTask = [_sessionManager GET:url parameters:parameters progress:nil success:callback failure:failure];
+        sessionTask = [_sessionManager GET:url parameters:parameters headers:headers progress:nil success:callback failure:failure];
     }else if (method == HJRequestMethodPOST) {
-        sessionTask = [_sessionManager POST:url parameters:parameters progress:nil success:callback failure:failure];
+        sessionTask = [_sessionManager POST:url parameters:parameters headers:headers progress:nil success:callback failure:failure];
     }else if (method == HJRequestMethodHEAD) {
-        sessionTask = [_sessionManager HEAD:url parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task) {
+        sessionTask = [_sessionManager HEAD:url parameters:parameters headers:headers success:^(NSURLSessionDataTask * _Nonnull task) {
             callback ? callback(task, nil) : nil;
         } failure:failure];
     }else if (method == HJRequestMethodPUT) {
-        sessionTask = [_sessionManager PUT:url parameters:parameters success:callback failure:failure];
+        sessionTask = [_sessionManager PUT:url parameters:parameters headers:headers success:callback failure:failure];
     }else if (method == HJRequestMethodPATCH) {
-        sessionTask = [_sessionManager PATCH:url parameters:parameters success:callback failure:failure];
+        sessionTask = [_sessionManager PATCH:url parameters:parameters headers:headers success:callback failure:failure];
     }else if (method == HJRequestMethodDELETE) {
-        sessionTask = [_sessionManager DELETE:url parameters:parameters success:callback failure:failure];
+        sessionTask = [_sessionManager DELETE:url parameters:parameters headers:headers success:callback failure:failure];
     }
     //添加最新的sessionTask到数组
     sessionTask ? [[self allSessionTask] addObject:sessionTask] : nil;
@@ -402,9 +456,9 @@ static YYCache *_dataCache;
 
 
 #pragma mark -- 上传文件
-+ (void)uploadFileWithURL:(NSString *)url parameters:(NSDictionary *)parameters name:(NSString *)name filePath:(NSString *)filePath progress:(HJHttpProgress)progress callback:(HJHttpRequest)callback
++ (void)uploadFileWithURL:(NSString *)url parameters:(NSDictionary *)parameters headers:(NSDictionary *)headers name:(NSString *)name filePath:(NSString *)filePath progress:(HJHttpProgress)progress callback:(HJHttpRequest)callback
 {
-    NSURLSessionTask *sessionTask = [_sessionManager POST:url parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    NSURLSessionTask *sessionTask = [_sessionManager POST:url parameters:parameters headers:headers constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         //添加-文件
         NSError *error = nil;
         [formData appendPartWithFileURL:[NSURL URLWithString:filePath] name:name error:&error];
@@ -426,12 +480,24 @@ static YYCache *_dataCache;
     //添加最新的sessionTask到数组
     sessionTask ? [[self allSessionTask] addObject:sessionTask] : nil;
 }
-
+///不推荐使用
++ (void)uploadFileWithURL:(NSString *)url parameters:(NSDictionary *)parameters name:(NSString *)name filePath:(NSString *)filePath progress:(HJHttpProgress)progress callback:(HJHttpRequest)callback
+{
+    [self uploadFileWithURL:url parameters:parameters headers:[_sessionManager.requestSerializer HTTPRequestHeaders] name:name filePath:filePath progress:progress callback:callback];
+}
 
 #pragma mark -- 上传图片文件
-+ (void)uploadImageURL:(NSString *)url parameters:(NSDictionary *)parameters images:(NSArray<UIImage *> *)images name:(NSString *)name fileName:(NSString *)fileName mimeType:(NSString *)mimeType progress:(HJHttpProgress)progress callback:(HJHttpRequest)callback;
++ (void)uploadImageURL:(NSString *)url
+            parameters:(NSDictionary *)parameters
+               headers:(NSDictionary *)headers
+                images:(NSArray<UIImage *> *)images
+                  name:(NSString *)name
+              fileName:(NSString *)fileName
+              mimeType:(NSString *)mimeType
+              progress:(HJHttpProgress)progress
+              callback:(HJHttpRequest)callback;
 {
-    NSURLSessionTask *sessionTask = [_sessionManager POST:url parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    NSURLSessionTask *sessionTask = [_sessionManager POST:url parameters:parameters headers:headers constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         //压缩-添加-上传图片
         [images enumerateObjectsUsingBlock:^(UIImage * _Nonnull image, NSUInteger idx, BOOL * _Nonnull stop) {
             NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
@@ -456,7 +522,11 @@ static YYCache *_dataCache;
     //添加最新的sessionTask到数组
     sessionTask ? [[self allSessionTask] addObject:sessionTask] : nil;
 }
-
+///不推荐使用
++ (void)uploadImageURL:(NSString *)url parameters:(NSDictionary *)parameters images:(NSArray<UIImage *> *)images name:(NSString *)name fileName:(NSString *)fileName mimeType:(NSString *)mimeType progress:(HJHttpProgress)progress callback:(HJHttpRequest)callback
+{
+    [self uploadImageURL:url parameters:parameters headers:[_sessionManager.requestSerializer HTTPRequestHeaders] images:images name:name fileName:fileName mimeType:mimeType progress:progress callback:callback];
+}
 #pragma mark -- 下载文件
 + (void)downloadWithURL:(NSString *)url fileDir:(NSString *)fileDir progress:(HJHttpProgress)progress callback:(HJHttpDownload)callback
 {

@@ -254,7 +254,7 @@
 				ORGANIZATIONNAME = Johnny;
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = 5F5F5TPDPM;
+						DevelopmentTeam = Z8FMEC8763;
 					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
@@ -266,6 +266,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 				"zh-Hans",
@@ -329,7 +330,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-HJNetwork_Example/Pods-HJNetwork_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-HJNetwork_Example/Pods-HJNetwork_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/HJNetwork/HJNetwork.framework",
 				"${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework",
@@ -342,7 +343,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HJNetwork_Example/Pods-HJNetwork_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HJNetwork_Example/Pods-HJNetwork_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E8B575826822516840E61B67 /* [CP] Check Pods Manifest.lock */ = {
@@ -534,7 +535,7 @@
 			baseConfigurationReference = D957BAE2A5D18F09AC4F4B29 /* Pods-HJNetwork_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5F5F5TPDPM;
+				DEVELOPMENT_TEAM = Z8FMEC8763;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HJNetwork/HJNetwork-Prefix.pch";
 				INFOPLIST_FILE = "HJNetwork/HJNetwork-Info.plist";
@@ -551,7 +552,7 @@
 			baseConfigurationReference = FD02221CC1C635C4A6DF8B1E /* Pods-HJNetwork_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5F5F5TPDPM;
+				DEVELOPMENT_TEAM = Z8FMEC8763;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HJNetwork/HJNetwork-Prefix.pch";
 				INFOPLIST_FILE = "HJNetwork/HJNetwork-Info.plist";

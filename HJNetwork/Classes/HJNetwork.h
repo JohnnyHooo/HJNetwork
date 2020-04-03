@@ -5,6 +5,7 @@
 //  Created by Johnny on 18/4/19.
 //  Copyright © 2018年 Johnny. All rights reserved.
 //
+#define kDEPRECATED_MSG_ATTRIBUTE(s) __attribute__((deprecated(s)))
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -142,8 +143,11 @@ typedef void(^HJNetworkStatus)(HJNetworkStatusType status);
  */
 + (void)GETWithURL:(NSString *)url
         parameters:(NSDictionary *)parameters
+           headers:(NSDictionary *)headers
        cachePolicy:(HJCachePolicy)cachePolicy
-           callback:(HJHttpRequest)callback;
+          callback:(HJHttpRequest)callback;
+///不推荐使用
++ (void)GETWithURL:(NSString *)url parameters:(NSDictionary *)parameters cachePolicy:(HJCachePolicy)cachePolicy callback:(HJHttpRequest)callback kDEPRECATED_MSG_ATTRIBUTE("推荐使用带headers的方法");
 
 
 /**
@@ -156,8 +160,11 @@ typedef void(^HJNetworkStatus)(HJNetworkStatusType status);
  */
 + (void)POSTWithURL:(NSString *)url
          parameters:(NSDictionary *)parameters
+            headers:(NSDictionary *)headers
         cachePolicy:(HJCachePolicy)cachePolicy
-            callback:(HJHttpRequest)callback;
+           callback:(HJHttpRequest)callback;
+///不推荐使用
++ (void)POSTWithURL:(NSString *)url parameters:(NSDictionary *)parameters cachePolicy:(HJCachePolicy)cachePolicy callback:(HJHttpRequest)callback kDEPRECATED_MSG_ATTRIBUTE("推荐使用带headers的方法");
 
 /**
  HEAD请求
@@ -169,8 +176,11 @@ typedef void(^HJNetworkStatus)(HJNetworkStatusType status);
  */
 + (void)HEADWithURL:(NSString *)url
          parameters:(NSDictionary *)parameters
+            headers:(NSDictionary *)headers
         cachePolicy:(HJCachePolicy)cachePolicy
-            callback:(HJHttpRequest)callback;
+           callback:(HJHttpRequest)callback;
+///不推荐使用
++ (void)HEADWithURL:(NSString *)url parameters:(NSDictionary *)parameters cachePolicy:(HJCachePolicy)cachePolicy callback:(HJHttpRequest)callback kDEPRECATED_MSG_ATTRIBUTE("推荐使用带headers的方法");
 
 
 /**
@@ -182,9 +192,12 @@ typedef void(^HJNetworkStatus)(HJNetworkStatusType status);
  @param callback 请求回调
  */
 + (void)PUTWithURL:(NSString *)url
-         parameters:(NSDictionary *)parameters
-        cachePolicy:(HJCachePolicy)cachePolicy
-            callback:(HJHttpRequest)callback;
+        parameters:(NSDictionary *)parameters
+           headers:(NSDictionary *)headers
+       cachePolicy:(HJCachePolicy)cachePolicy
+          callback:(HJHttpRequest)callback;
+///不推荐使用
++ (void)PUTWithURL:(NSString *)url parameters:(NSDictionary *)parameters cachePolicy:(HJCachePolicy)cachePolicy callback:(HJHttpRequest)callback kDEPRECATED_MSG_ATTRIBUTE("推荐使用带headers的方法");
 
 
 
@@ -197,9 +210,12 @@ typedef void(^HJNetworkStatus)(HJNetworkStatusType status);
  @param callback 请求回调
  */
 + (void)PATCHWithURL:(NSString *)url
-         parameters:(NSDictionary *)parameters
-        cachePolicy:(HJCachePolicy)cachePolicy
+          parameters:(NSDictionary *)parameters
+             headers:(NSDictionary *)headers
+         cachePolicy:(HJCachePolicy)cachePolicy
             callback:(HJHttpRequest)callback;
+///不推荐使用
++ (void)PATCHWithURL:(NSString *)url parameters:(NSDictionary *)parameters cachePolicy:(HJCachePolicy)cachePolicy callback:(HJHttpRequest)callback kDEPRECATED_MSG_ATTRIBUTE("推荐使用带headers的方法");
 
 
 /**
@@ -211,9 +227,12 @@ typedef void(^HJNetworkStatus)(HJNetworkStatusType status);
  @param callback 请求回调
  */
 + (void)DELETEWithURL:(NSString *)url
-         parameters:(NSDictionary *)parameters
-        cachePolicy:(HJCachePolicy)cachePolicy
-            callback:(HJHttpRequest)callback;
+           parameters:(NSDictionary *)parameters
+              headers:(NSDictionary *)headers
+          cachePolicy:(HJCachePolicy)cachePolicy
+             callback:(HJHttpRequest)callback;
+///不推荐使用
++ (void)DELETEWithURL:(NSString *)url parameters:(NSDictionary *)parameters cachePolicy:(HJCachePolicy)cachePolicy callback:(HJHttpRequest)callback kDEPRECATED_MSG_ATTRIBUTE("推荐使用带headers的方法");
 
 
 /**
@@ -226,10 +245,13 @@ typedef void(^HJNetworkStatus)(HJNetworkStatusType status);
  @param callback 请求回调
  */
 + (void)HTTPWithMethod:(HJRequestMethod)method
-                    url:(NSString *)url
-             parameters:(NSDictionary *)parameters
-            cachePolicy:(HJCachePolicy)cachePolicy
-                callback:(HJHttpRequest)callback;
+                   url:(NSString *)url
+            parameters:(NSDictionary *)parameters
+               headers:(NSDictionary *)headers
+           cachePolicy:(HJCachePolicy)cachePolicy
+              callback:(HJHttpRequest)callback;
+///不推荐使用
++ (void)HTTPWithMethod:(HJRequestMethod)method url:(NSString *)url parameters:(NSDictionary *)parameters cachePolicy:(HJCachePolicy)cachePolicy callback:(HJHttpRequest)callback kDEPRECATED_MSG_ATTRIBUTE("推荐使用带headers的方法");
 
 
 /**
@@ -244,15 +266,17 @@ typedef void(^HJNetworkStatus)(HJNetworkStatusType status);
  */
 + (void)uploadFileWithURL:(NSString *)url
                parameters:(NSDictionary *)parameters
+                  headers:(NSDictionary *)headers
                      name:(NSString *)name
                  filePath:(NSString *)filePath
                  progress:(HJHttpProgress)progress
-                  callback:(HJHttpRequest)callback;
+                 callback:(HJHttpRequest)callback;
++ (void)uploadFileWithURL:(NSString *)url parameters:(NSDictionary *)parameters name:(NSString *)name filePath:(NSString *)filePath progress:(HJHttpProgress)progress callback:(HJHttpRequest)callback kDEPRECATED_MSG_ATTRIBUTE("推荐使用带headers的方法");
 
 
 /**
  上传图片文件
-
+ 
  @param url 请求地址
  @param parameters 请求参数
  @param images 图片数组
@@ -263,18 +287,21 @@ typedef void(^HJNetworkStatus)(HJNetworkStatusType status);
  @param callback 请求回调
  */
 + (void)uploadImageURL:(NSString *)url
-       parameters:(NSDictionary *)parameters
-           images:(NSArray<UIImage *> *)images
-             name:(NSString *)name
-         fileName:(NSString *)fileName
-         mimeType:(NSString *)mimeType
-         progress:(HJHttpProgress)progress
-          callback:(HJHttpRequest)callback;
+            parameters:(NSDictionary *)parameters
+               headers:(NSDictionary *)headers
+                images:(NSArray<UIImage *> *)images
+                  name:(NSString *)name
+              fileName:(NSString *)fileName
+              mimeType:(NSString *)mimeType
+              progress:(HJHttpProgress)progress
+              callback:(HJHttpRequest)callback;
+
++ (void)uploadImageURL:(NSString *)url parameters:(NSDictionary *)parameters images:(NSArray<UIImage *> *)images name:(NSString *)name fileName:(NSString *)fileName mimeType:(NSString *)mimeType progress:(HJHttpProgress)progress callback:(HJHttpRequest)callback kDEPRECATED_MSG_ATTRIBUTE("推荐使用带headers的方法");
 
 
 /**
  下载文件
-
+ 
  @param url 请求地址
  @param fileDir 文件存储的目录(默认存储目录为HJDownloader，当未创建文件夹的话会自动创建)
  @param progress 文件下载的进度信息
@@ -283,7 +310,7 @@ typedef void(^HJNetworkStatus)(HJNetworkStatusType status);
 + (void)downloadWithURL:(NSString *)url
                 fileDir:(NSString *)fileDir
                progress:(HJHttpProgress)progress
-                callback:(HJHttpDownload)callback;
+               callback:(HJHttpDownload)callback;
 
 #pragma mark -- 网络缓存
 
@@ -349,16 +376,16 @@ typedef void(^HJNetworkStatus)(HJNetworkStatusType status);
 
 /**
  设置网络请求参数的格式:默认为JSON格式
-
+ 
  @param requestSerializer HJRequestSerializerJSON---JSON格式  HJRequestSerializerHTTP--HTTP
  */
 + (void)setRequestSerializer:(HJRequestSerializer)requestSerializer;
 
 /**
  设置服务器响应数据格式:默认为JSON格式
-
+ 
  @param responseSerializer HJResponseSerializerJSON---JSON格式  HJResponseSerializerHTTP--HTTP
-
+ 
  */
 + (void)setResponseSerializer:(HJResponseSerializer)responseSerializer;
 
@@ -371,7 +398,7 @@ typedef void(^HJNetworkStatus)(HJNetworkStatusType status);
 
 /**
  配置自建证书的Https请求，参考链接:http://blog.csdn.net/syg90178aw/article/details/52839103
-
+ 
  @param cerPath 自建https证书路径
  @param validatesDomainName 是否验证域名(默认YES) 如果证书的域名与请求的域名不一致，需设置为NO
  服务器使用其他信任机构颁发的证书也可以建立连接，但这个非常危险，建议打开 .validatesDomainName=NO,主要用于这种情况:客户端请求的是子域名，而证书上是另外一个域名。因为SSL证书上的域名是独立的
